@@ -9,7 +9,7 @@ const About = () => {
   return (
     <section id='about'>
 
-      <h5>Who Am I?</h5>
+      <h5>who am I?</h5>
 
       <h2>About Me</h2> 
       
@@ -26,19 +26,19 @@ const About = () => {
             <article className='about__card'>
               <FaAward className='about__icon'/>
               <h5>SELF-STARTER</h5>
-              <small>Without Discipline and Drive, A Good Idea is Useless</small>
+              <small>Without discipline and drive, a good idea is useless</small>
             </article>
 
             <article className='about__card'>
               <FiUsers className='about__icon'/>
               <h5>TOLERANT</h5>
-              <small>To Listen is Grand, to Sympathize is Paramount</small>
+              <small>To listen is grand, to sympathize is paramount</small>
             </article>
 
             <article className='about__card'>
               <VscFolderLibrary className='about__icon'/>
               <h5>ARDENT</h5>
-              <small>I Appreciate Skill and Value Effort</small>
+              <small>I appreciate skill and value effort</small>
             </article>
           </div>
 

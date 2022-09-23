@@ -11,6 +11,7 @@ import {SiJavascript} from 'react-icons/si'
 import {FaNode} from 'react-icons/fa'
 import {SiMysql} from 'react-icons/si'
 import {SiMongodb} from 'react-icons/si'
+import {FaAws} from 'react-icons/fa'
 
 import {SiSequelize} from 'react-icons/si'
 
@@ -18,7 +19,7 @@ const Experience = () => {
   return (
     <section id='experience'>
       
-      <h5>Just A Few of My </h5>
+      <h5>just a few</h5>
 
       <h2>Relevant Skills</h2>
       
@@ -32,7 +33,7 @@ const Experience = () => {
             <article className="experience__details">
               <AiFillHtml5 className="experience__details-icon"/>
               <div>
-                <h4>HTML 5 &amp; CSS 3</h4>
+                <h4>HTML/CSS</h4>
                 <small className='text-light'>•••••••••••••••••••••••••</small>
               </div>
             </article>
@@ -118,9 +119,9 @@ const Experience = () => {
               </article>
 
               <article className="experience__details">
-                <AiFillHtml5 className="experience__details-icon"/>
+                <FaAws className="experience__details-icon"/>
                 <div>
-                  <h4>Amazon Web Services</h4>
+                  <h4>AWS</h4>
                   <small className='text-light'>••••••••••</small>
                 </div>
               </article>

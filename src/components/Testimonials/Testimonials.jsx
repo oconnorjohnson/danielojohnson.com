@@ -13,32 +13,33 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 const data = [
+  // {
+  //   name: 'Patrick Loungway',
+  //   title: 'Film Director/Director of Photography',
+  //   review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sapiente illum qui dolorum laboriosam dolore velit quod eveniet totam esse eius impedit a ipsam alias error, placeat consequatur. Porro, pariatur.'
+  // },
   {
-    name: 'Patrick Loungway',
-    title: 'Film Director/Director of Photography',
-    review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sapiente illum qui dolorum laboriosam dolore velit quod eveniet totam esse eius impedit a ipsam alias error, placeat consequatur. Porro, pariatur.'
+    name: 'Derar Zawaydeh',
+    title: 'Managing Owner, Crepeville',
+    review: 'Daniel is a hidden gem. He is a reliable and upstanding individual whose work speaks for itself. He makes light-work of difficult tasks, and never fails to inspire others to do the same. Daniel is a truly cross-functional employee. For the same reasons I am sad to see him go, I am certain he will make an invaluable contribution to any team lucky enough to have him.'
   },
   {
     name: 'Chris Montenegro',
     title: 'General Manager, Burgers and Brew',
-    review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sapiente illum qui dolorum laboriosam dolore velit quod eveniet totam esse eius impedit a ipsam alias error, placeat consequatur. Porro, pariatur.'
+    review: 'Daniel is an outstanding individual with a tremendous work ethic. With a great attitude and a gentle personality, he is always ready and looking for what is next. He attacks problems with thrill and never shies away from a challenge.'
   },
-  {
-    name: 'Greg Simmons',
-    title: 'Doctorate of Psychology, Product Designer',
-    review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sapiente illum qui dolorum laboriosam dolore velit quod eveniet totam esse eius impedit a ipsam alias error, placeat consequatur. Porro, pariatur.'
-  },
-  {
-    name: 'Derar Zawaydeh',
-    title: 'Managing Owner, Crepeville',
-    review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sapiente illum qui dolorum laboriosam dolore velit quod eveniet totam esse eius impedit a ipsam alias error, placeat consequatur. Porro, pariatur.'
-  }
+  // {
+  //   name: 'Greg Simmons',
+  //   title: 'Doctorate of Psychology, Product Designer',
+  //   review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sapiente illum qui dolorum laboriosam dolore velit quod eveniet totam esse eius impedit a ipsam alias error, placeat consequatur. Porro, pariatur.'
+  // }
+ 
 ]
 
 const Testimonials = () => {
   return (
     <section id="testimonials">
-      <h5>Employer Reviews</h5>
+      <h5>from previous employers</h5>
       <h2>Testimonials</h2>
 
       <Swiper 

@@ -6,6 +6,7 @@ import IMG3 from '../../assets/portfolio3.png'
 import IMG4 from '../../assets/portfolio4.png'
 import IMG5 from '../../assets/portfolio5.png'
 import IMG6 from '../../assets/portfolio6.png'
+import IMG7 from '../../assets/portfolio7.png'
 
 const data = [
   {
@@ -32,13 +33,21 @@ const data = [
     github: 'https://github.com/oconnorjohnson/cream-finder',
     demo: 'https://enthousiaste-monsieur-80020.herokuapp.com/'
   },
+  // {
+  //   id: 4,
+  //   image: IMG4,
+  //   title: 'Mix Easy',
+  //   description: 'A full-stack web app built using the MERN stack that allows users to create and rank custom cocktails.',
+  //   github: 'https://github.com/ChrisDeng1999/Mix-Me',
+  //   demo: 'https://guarded-reef-56811.herokuapp.com/'
+  // },
   {
     id: 4,
-    image: IMG4,
-    title: 'Mix Easy',
-    description: 'A full-stack web app built using the MERN stack that allows users to create and rank custom cocktails.',
-    github: 'https://github.com/ChrisDeng1999/Mix-Me',
-    demo: 'https://guarded-reef-56811.herokuapp.com/'
+    image: IMG7, 
+    title: 'Work-Day Calendar App',
+    description: 'This front-end-only web-application uses jQuery, Bootstrap, JavaScript, HTML and CSS to create a simple business-hours day planner. Hours are blocked off as they have passed.',
+    github: 'https://github.com/oconnorjohnson/calendar_app',
+    demo: 'https://oconnorjohnson.github.io/calendar_app/'
   },
   {
     id: 5,
@@ -60,8 +69,8 @@ const data = [
 
 const Portfolio = () => {
   return (
-    <section id="porftolio">
-      <h5>My Recent Work</h5>
+    <section id="portfolio">
+      <h5>some recent work</h5>
       <h2>Portfolio</h2>
 
       <div className="container portfolio__container">

@@ -12,6 +12,7 @@ const Contact = () => {
 
     emailjs.sendForm('service_eefagyx', 'template_jdwlmcw', form.current, 'Dobo4jEVKGW5R-xSZ')
       .then((result) => {
+        alert("Thank your! Your message has been sent.");
         console.log(result.text);
       }, (error) => {
         console.log(error.text);
@@ -19,21 +20,25 @@ const Contact = () => {
     };
   return (
     <section id='contact'>
-      <h5>Get In Touch...</h5>
+      <h5>get in touch</h5>
       <h2>Contact Me</h2>
 
       <div className="container contact__container">
         <div className="contact__options">
-          <article className="contact__option">
-            <MdOutlineEmail className='contact__option-icon' />
-            <h4>Email</h4>
-            <a href="mailto:daniel@danielojohnson.com">Let's Talk</a>
-          </article>
-          <article className="contact__option">
-            <BsLinkedin className='contact__option-icon' />
-            <h4>LinkedIn</h4>
-            <a href="https://www.linkedin.com/in/oconnorjohnson">Let's Connect</a>
-          </article>
+          <a href="mailto:daniel@danielojohnson.com">
+            <article className="contact__option">
+              <MdOutlineEmail className='contact__option-icon' />
+              <h3>Email</h3>
+              <h5>get in touch</h5>
+            </article>
+          </a>
+          <a href="https://www.linkedin.com/in/oconnorjohnson">
+            <article className="contact__option">
+              <BsLinkedin className='contact__option-icon' />
+              <h3>LinkedIn</h3>
+              <h5>let's connect</h5>
+            </article>
+            </a>
         </div>
         <form ref={form} onSubmit={sendEmail}>
           <input type="text" name='name' placeholder='Full Name' required />
