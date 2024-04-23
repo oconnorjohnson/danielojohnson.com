@@ -6,9 +6,7 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "generate": "drizzle-kit generate:sqlite",
-    "migrate": "node ./server/db/migrate.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "@libsql/client": "^0.6.0",
