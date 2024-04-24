@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import { AuroraHero } from "@/components/root/aurora-hero";
+import SideNav from "@/components/root/side-nav";
 
 export const metadata: Metadata = {
   title: "Daniel O. Johnson",
@@ -16,7 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={GeistSans.className}>
       <body className="bg-black">
-        <AuroraHero>{children}</AuroraHero>
+        <AuroraHero>
+          <div className="h-screen w-screen">
+            <SideNav>{children}</SideNav>
+          </div>
+        </AuroraHero>
       </body>
     </html>
   );

@@ -20,7 +20,7 @@ import {
 export default function HeroCards() {
   return (
     <>
-      <div>Hello from Hero Cards</div>
+      <div>Hello from Project Carousel</div>
     </>
   );
 }
