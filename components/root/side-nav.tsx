@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useAtom } from "jotai";
 import {
   activeExplorerItem,
@@ -10,7 +11,7 @@ import {
   CollapsibleContent,
   Collapsible,
 } from "@/components/ui/collapsible";
-import { FcFolder, FcOpenedFolder, FcFile } from "react-icons/fc";
+import { FcFolder, FcOpenedFolder, FcFile, FcInfo } from "react-icons/fc";
 import { MdArrowDropDown, MdArrowRight } from "react-icons/md";
 
 export default function Component({ children }: { children: React.ReactNode }) {
@@ -69,7 +70,13 @@ export default function Component({ children }: { children: React.ReactNode }) {
                   }`}
                   onClick={() => handleItemClick("index.js")}
                 >
-                  <FcFile className="h-6 w-6" />
+                  <Image
+                    alt="react file icon"
+                    src="/react.svg"
+                    width={30}
+                    height={30}
+                    className="pr-1"
+                  />
                   <span>root.tsx</span>
                 </div>
                 <Collapsible>
@@ -83,7 +90,7 @@ export default function Component({ children }: { children: React.ReactNode }) {
                       ) : (
                         <FcOpenedFolder className="h-6 w-6" />
                       )}
-                      <span>components</span>
+                      <span>README</span>
                     </div>
                     {isPagesOpen ? (
                       <MdArrowRight className="h-6 w-6" />
@@ -100,8 +107,8 @@ export default function Component({ children }: { children: React.ReactNode }) {
                       }`}
                       onClick={() => handleItemClick("header")}
                     >
-                      <FcFile className="h-6 w-6" />
-                      <span>Projects.tsx</span>
+                      <FcInfo className="h-6 w-6" />
+                      <span>projects.md</span>
                     </div>
                     <div
                       className={`flex items-center gap-2 px-2 py-1 rounded ${
@@ -111,8 +118,8 @@ export default function Component({ children }: { children: React.ReactNode }) {
                       }`}
                       onClick={() => handleItemClick("footer")}
                     >
-                      <FcFile className="h-6 w-6" />
-                      <span>Blogs.tsx</span>
+                      <FcInfo className="h-6 w-6" />
+                      <span>blogs.md</span>
                     </div>
                   </CollapsibleContent>
                 </Collapsible>
@@ -127,7 +134,13 @@ export default function Component({ children }: { children: React.ReactNode }) {
               }`}
               onClick={() => handleItemClick("contact.json")}
             >
-              <FcFile className="h-6 w-6" />
+              <Image
+                alt="json file icon"
+                src="/json.svg"
+                width={25}
+                height={25}
+                className="px-1"
+              />
               <span>contact.json</span>
             </div>
           </div>

@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { MdOutlineClose } from "react-icons/md";
+import { FcInfo } from "react-icons/fc";
 export default function Title() {
   return (
     <>
       <div className="flex flex-row">
         <div className="flex flex-grow bg-gray-600">
-          <div className="bg-gray-800 border-b border-gray-800 px-4 py-2 flex flex-row items-center text-yellow-300 text-md">
+          <div className="bg-gray-600 border-r border-gray-800 px-4 py-2 flex flex-row items-center justify-center align-center text-md">
             <Image
               alt="react file icon"
               src="/react.svg"
@@ -17,31 +18,20 @@ export default function Title() {
             root.tsx{" "}
             <MdOutlineClose className="pl-3 pt-0.5 h-6 w-6 text-white" />
           </div>
-          <div className="bg-gray-600 border-r border-gray-800 px-4 py-2 flex flex-row items-center text-md">
-            <Image
-              alt="react file icon"
-              src="/react.svg"
-              width={30}
-              height={30}
-              className="pr-1"
-            />
-            Projects.tsx
+          <div className="bg-gray-600 border-r border-gray-800 px-4 py-2 flex flex-row items-center justify-center align-center text-md">
+            <FcInfo className="pr-1.5 h-6 w-6" />
+            projects.md
           </div>
-          <div className="bg-gray-600 border-r border-gray-800 px-4 py-2 flex flex-row items-center text-md">
-            <Image
-              alt="react file icon"
-              src="/react.svg"
-              width={30}
-              height={30}
-              className="pr-1"
-            />
-            Blogs.tsx
+          <div className="bg-gray-800 border-b border-gray-800 px-4 py-2 flex flex-row items-center justify-center align-center text-yellow-300 text-md">
+            <FcInfo className="pr-1.5 h-6 w-6" />
+            blogs.md
           </div>
         </div>
       </div>
       <div className="flex flex-col">
         <div className="w-full bg-gray-800 shadow-xl flex flex-row items-center justify-start pl-4 py-2 text-sm">
           danielojohnson.com<span className="px-2">{">"}</span>app
+          <span className="px-2">{">"}</span>README
           <span className="pl-2">{">"}</span>
           <Image
             alt="react file icon"
@@ -50,7 +40,7 @@ export default function Title() {
             height={30}
             className="px-1"
           />{" "}
-          root.tsx
+          blogs.md
         </div>
         <ScrollArea className="h-[722px] w-[900px]">
           <div className="flex flex-cols-2 items-start justify-start px-4 py-2">
