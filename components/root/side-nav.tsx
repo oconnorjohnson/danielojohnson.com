@@ -79,9 +79,9 @@ export default function Component({ children }: { children: React.ReactNode }) {
                   >
                     <div className="flex items-center gap-2">
                       {isPagesOpen ? (
-                        <FcOpenedFolder className="h-6 w-6" />
-                      ) : (
                         <FcFolder className="h-6 w-6" />
+                      ) : (
+                        <FcOpenedFolder className="h-6 w-6" />
                       )}
                       <span>components</span>
                     </div>
