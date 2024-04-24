@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { useAtom } from "jotai";
 import { activeExplorerItem, openTabs, activeTab } from "@/state/atoms";
 import RootTsxPage from "@/components/root/rootTsxPage";
@@ -7,6 +6,7 @@ import BlogsMdPage from "@/components/root/blogsMdPage";
 import ProjectsMdPage from "@/components/root/projectsMdPage";
 import { FcInfo } from "react-icons/fc";
 import { MdOutlineClose } from "react-icons/md";
+import CmdKInstructions from "@/components/root/cmd-k-instructions";
 
 export default function Editor() {
   const [tabs, setTabs] = useAtom(openTabs);
@@ -35,7 +35,13 @@ export default function Editor() {
         setActive("");
         setActiveExplorerItem("");
       } else {
-        const newActiveTab = filteredTabs[0];
+        // Find the index of the tab that was just closed
+        const closedTabIndex = tabs.indexOf(tabName);
+        // Determine the new active tab: previous one if possible, otherwise the next one
+        const newActiveTab =
+          closedTabIndex > 0
+            ? filteredTabs[closedTabIndex - 1]
+            : filteredTabs[0];
         setActive(newActiveTab);
         setActiveExplorerItem(newActiveTab);
       }
@@ -61,7 +67,7 @@ export default function Editor() {
 
   return (
     <>
-      <div className="flex flex-row">
+      <div className="flex flex-row bg-gray-700">
         {tabs.map((tabName) => {
           // Use displayName for rendering the tab name in the UI
           const displayName = tabDisplayNames[tabName as TabName];
@@ -92,7 +98,7 @@ export default function Editor() {
           tabs.map((tabName) => active === tabName && renderTabContent(tabName))
         ) : (
           <div className="h-[805px] flex flex-col items-center align-center justify-center">
-            <div>Hello</div>
+            <CmdKInstructions />
           </div>
         )}
       </div>
