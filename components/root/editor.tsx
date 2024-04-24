@@ -72,20 +72,23 @@ export default function Editor() {
           // Use displayName for rendering the tab name in the UI
           const displayName = tabDisplayNames[tabName as TabName];
           return (
-            <div className="bg-gray-600 flex-row">
+            <div className="bg-gray-600">
               <div
                 key={tabName}
-                className={`flex flex-grow ${
+                className={`flex flex-row items-center ${
                   active === tabName ? "bg-gray-800" : "bg-gray-600"
-                } border-r hover:cursor-pointer border-gray-800 px-4 py-2  items-center justify-between`}
+                } border-r hover:cursor-pointer border-gray-800 px-4 py-2`}
               >
-                <span
+                <div
                   className="text-md text-white"
                   onClick={() => switchTab(tabName)}
                 >
                   {displayName}
-                </span>
-                <button onClick={() => closeTab(tabName)}>
+                </div>
+                <button
+                  onClick={() => closeTab(tabName)}
+                  className="pt-0.5 ml-6"
+                >
                   <MdOutlineClose className="text-white" />
                 </button>
               </div>
