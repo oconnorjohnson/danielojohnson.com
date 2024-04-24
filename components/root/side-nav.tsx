@@ -5,6 +5,8 @@ import {
   activeExplorerItem,
   isAppFolderOpen,
   isPagesTabOpen,
+  openTabs,
+  activeTab,
 } from "@/state/atoms";
 import {
   CollapsibleTrigger,
@@ -18,9 +20,19 @@ export default function Component({ children }: { children: React.ReactNode }) {
   const [activeItem, setActiveItem] = useAtom(activeExplorerItem);
   const [isOpen, setIsOpen] = useAtom(isAppFolderOpen);
   const [isPagesOpen, setIsPagesOpen] = useAtom(isPagesTabOpen);
+  const [tabs, setTabs] = useAtom(activeTab);
+  const [, setActive] = useAtom(activeTab);
 
-  const handleItemClick = (itemId: any) => {
+  const handleItemClick = (itemId: string) => {
     setActiveItem(itemId);
+    // Check if the tab is already open
+    if (!tabs.includes(itemId)) {
+      // Correctly update the openTabs atom
+      setTabs((prevTabs) => [...prevTabs, itemId]);
+    }
+    // Correctly update the activeTab atom
+    console.log("active item:", itemId);
+    setActive(itemId);
   };
 
   const handleAppFolderOpen = () => {
