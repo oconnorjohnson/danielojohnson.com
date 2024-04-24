@@ -30,6 +30,7 @@ export default function Title() {
         <div>21</div>
         <div>22</div>
         <div>23</div>
+        <div>24</div>
       </div>
       <div>
         {/* PERSON */}
