@@ -28,7 +28,7 @@ export default function Component({ children }: { children: React.ReactNode }) {
   };
 
   const handlePagesFolderOpen = () => {
-    setIsPagesOpen((prev) => !prev); // Correctly toggle the state
+    setIsPagesOpen((prev) => !prev); // This is sufficient for toggling and persisting state
   };
 
   return (
@@ -79,23 +79,23 @@ export default function Component({ children }: { children: React.ReactNode }) {
                   />
                   <span>root.tsx</span>
                 </div>
-                <Collapsible>
+                <Collapsible open={isPagesOpen}>
                   <CollapsibleTrigger
                     className="flex items-center justify-between w-full px-2 py-1 rounded hover:bg-gray-700"
                     onClick={handlePagesFolderOpen}
                   >
                     <div className="flex items-center gap-2">
                       {isPagesOpen ? (
-                        <FcFolder className="h-6 w-6" />
-                      ) : (
                         <FcOpenedFolder className="h-6 w-6" />
+                      ) : (
+                        <FcFolder className="h-6 w-6" />
                       )}
                       <span>README</span>
                     </div>
                     {isPagesOpen ? (
-                      <MdArrowRight className="h-6 w-6" />
-                    ) : (
                       <MdArrowDropDown className="h-6 w-6" />
+                    ) : (
+                      <MdArrowRight className="h-6 w-6" />
                     )}
                   </CollapsibleTrigger>
                   <CollapsibleContent className="pl-6 space-y-1">

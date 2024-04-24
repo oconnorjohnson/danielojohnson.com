@@ -15,12 +15,12 @@ export default function Title() {
               height={30}
               className="pr-1"
             />
-            root.tsx{" "}
-            <MdOutlineClose className="pl-3 pt-0.5 h-6 w-6 text-white" />
+            root.tsx
           </div>
           <div className="bg-gray-800 border-b border-gray-800 px-4 py-2 flex flex-row items-center justify-center align-center text-yellow-300 text-md">
             <FcInfo className="pr-1.5 h-6 w-6" />
-            projects.md
+            projects.md{" "}
+            <MdOutlineClose className="pl-3 pt-0.5 h-6 w-6 text-white" />
           </div>
           <div className="bg-gray-600 border-r border-gray-800 px-4 py-2 flex flex-row items-center justify-center align-center text-md">
             <FcInfo className="pr-1.5 h-6 w-6" />
