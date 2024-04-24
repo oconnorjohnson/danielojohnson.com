@@ -1,9 +1,4 @@
 export default function Title() {
-  interface Person {
-    firstName: string;
-    lastName: string;
-    title: string;
-  }
   return (
     <div className="flex flex-cols-2 space-y-6 items-start justify-center">
       <div className="flex flex-col pr-8 text-gray-500 items-end font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg xl:text-2xl pt-6">
@@ -31,6 +26,8 @@ export default function Title() {
         <div>22</div>
         <div>23</div>
         <div>24</div>
+        <div>25</div>
+        <div>26</div>
       </div>
       <div>
         {/* PERSON */}
@@ -42,20 +39,10 @@ export default function Title() {
           </span>
           {" = {"}
           <br />
-          <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
-            firstName
-          </span>
+          <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>name</span>
           <span style={{ color: "#d4d4d4" }}>:</span>
           {' "'}
-          <span style={{ color: "#cb4154" }}>Daniel</span>
-          {'",'}
-          <br />
-          <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
-            lastName
-          </span>
-          <span style={{ color: "#d4d4d4" }}>:</span>
-          {' "'}
-          <span style={{ color: "#cb4154" }}>Johnson</span>
+          <span style={{ color: "#cb4154" }}>Daniel Johnson</span>
           {'",'}
           <br />
           <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>title</span>
@@ -68,6 +55,7 @@ export default function Title() {
         </h1>
         {/* LANGUAGES */}
         <h1 className="font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg xl:text-2xl">
+          <br />
           <span style={{ color: "#dcdcaa" }}>let</span>{" "}
           <span style={{ color: "#ce9178" }}>
             Languages: <span style={{ color: "#800080" }}>LanguageType</span>
@@ -98,6 +86,7 @@ export default function Title() {
         </h1>
         {/* TOOLS */}
         <h1 className="font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg xl:text-2xl">
+          <br />
           <span style={{ color: "#dcdcaa" }}>let</span>{" "}
           <span style={{ color: "#ce9178" }}>
             Tools: <span style={{ color: "#800080" }}>ToolsType</span>
@@ -139,6 +128,7 @@ export default function Title() {
         </h1>
         {/* HOBBIES */}
         <h1 className="font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg xl:text-2xl">
+          <br />
           <span style={{ color: "#dcdcaa" }}>let</span>{" "}
           <span style={{ color: "#ce9178" }}>
             Hobbies: <span style={{ color: "#800080" }}>HobbyType</span>
