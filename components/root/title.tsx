@@ -5,7 +5,7 @@ export default function Title() {
     title: string;
   }
   return (
-    <div className="flex flex-col space-y-12 items-start justify-center pt-12 pl-12">
+    <div className="flex flex-col space-y-6 items-start justify-center">
       {/* PERSON */}
       <h1 className="font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg xl:text-2xl">
         <span style={{ color: "#dcdcaa" }}>const</span>{" "}
