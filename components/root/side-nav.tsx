@@ -86,9 +86,9 @@ export default function Component({ children }: { children: React.ReactNode }) {
                       <span>components</span>
                     </div>
                     {isPagesOpen ? (
-                      <MdArrowDropDown className="h-6 w-6" />
-                    ) : (
                       <MdArrowRight className="h-6 w-6" />
+                    ) : (
+                      <MdArrowDropDown className="h-6 w-6" />
                     )}
                   </CollapsibleTrigger>
                   <CollapsibleContent className="pl-6 space-y-1">
