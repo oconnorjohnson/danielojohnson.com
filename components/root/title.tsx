@@ -77,9 +77,7 @@ export default function Title() {
         </span>
         <span style={{ color: "#d4d4d4" }}>:</span>
         {" ["}
-        <span style={{ color: "#cb4154" }}>
-          "React", "Next.js", "Svelte", "Express"
-        </span>
+        <span style={{ color: "#cb4154" }}>"React", "Next.js", "Express"</span>
         {"],"}
         <br />
         <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
