@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useAtom } from "jotai";
-import { openTabs, activeTab } from "@/state/atoms";
+import { activeExplorerItem, openTabs, activeTab } from "@/state/atoms";
 import RootTsxPage from "@/components/root/rootTsxPage";
 import BlogsMdPage from "@/components/root/blogsMdPage";
 import ProjectsMdPage from "@/components/root/projectsMdPage";
@@ -19,18 +19,27 @@ export default function Editor() {
     header: "projects.md",
     footer: "blogs.md",
   };
+  const [, setActiveExplorerItem] = useAtom(activeExplorerItem);
+
+  const switchTab = (tabName: string) => {
+    setActive(tabName);
+    setActiveExplorerItem(tabName); // Update the explorer item to reflect the active tab
+  };
 
   const closeTab = (tabName: string) => {
     const filteredTabs = tabs.filter((tab) => tab !== tabName);
     setTabs(filteredTabs);
     if (active === tabName) {
-      const newActiveTab = filteredTabs[0] || "index.js"; // Default to "index.js" if no tabs left
-      setActive(newActiveTab);
+      if (filteredTabs.length === 0) {
+        // No tabs left, set active tab and explorer item to null or empty
+        setActive("");
+        setActiveExplorerItem("");
+      } else {
+        const newActiveTab = filteredTabs[0];
+        setActive(newActiveTab);
+        setActiveExplorerItem(newActiveTab);
+      }
     }
-  };
-
-  const switchTab = (tabName: string) => {
-    setActive(tabName);
   };
 
   const renderTabContent = (tabName: string) => {
