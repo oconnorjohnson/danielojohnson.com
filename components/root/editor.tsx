@@ -1,18 +1,30 @@
 "use client";
+import Image from "next/image";
 import { useAtom } from "jotai";
 import { openTabs, activeTab } from "@/state/atoms";
 import RootTsxPage from "@/components/root/rootTsxPage";
 import BlogsMdPage from "@/components/root/blogsMdPage";
 import ProjectsMdPage from "@/components/root/projectsMdPage";
+import { FcInfo } from "react-icons/fc";
+import { MdOutlineClose } from "react-icons/md";
 
 export default function Editor() {
   const [tabs, setTabs] = useAtom(openTabs);
   const [active, setActive] = useAtom(activeTab);
 
+  type TabName = "index.js" | "header" | "footer";
+
+  const tabDisplayNames: Record<TabName, string> = {
+    "index.js": "root.tsx",
+    header: "projects.md",
+    footer: "blogs.md",
+  };
+
   const closeTab = (tabName: string) => {
-    setTabs(tabs.filter((tab) => tab !== tabName));
+    const filteredTabs = tabs.filter((tab) => tab !== tabName);
+    setTabs(filteredTabs);
     if (active === tabName) {
-      const newActiveTab = tabs.find((tab) => tab !== tabName) || "";
+      const newActiveTab = filteredTabs[0] || "index.js"; // Default to "index.js" if no tabs left
       setActive(newActiveTab);
     }
   };
@@ -21,30 +33,59 @@ export default function Editor() {
     setActive(tabName);
   };
 
+  const renderTabContent = (tabName: string) => {
+    // Cast tabName to TabName type when using it as a key
+    // Use a type assertion only if you're sure tabName will always match a key in tabDisplayNames
+    const displayName = tabDisplayNames[tabName as TabName];
+
+    switch (tabName) {
+      case "index.js":
+        return <RootTsxPage />;
+      case "header":
+        return <ProjectsMdPage />;
+      case "footer":
+        return <BlogsMdPage />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <>
       <div className="flex flex-row">
-        {/* {tabs.map((tab) => (
-          <div
-            key={tab}
-            className={`px-4 py-2 ${
-              active === tab
-                ? "bg-gray-800 text-yellow-300"
-                : "bg-gray-600 text-md"
-            }`}
-            onClick={() => switchTab(tab)}
-          >
-            {tab}
-            <span onClick={() => closeTab(tab)} className="pl-3 cursor-pointer">
-              ✕
-            </span>
-          </div>
-        ))} */}
+        {tabs.map((tabName) => {
+          // Use displayName for rendering the tab name in the UI
+          const displayName = tabDisplayNames[tabName as TabName];
+          return (
+            <div className="bg-gray-600 flex-row">
+              <div
+                key={tabName}
+                className={`flex flex-grow ${
+                  active === tabName ? "bg-gray-800" : "bg-gray-600"
+                } border-r hover:cursor-pointer border-gray-800 px-4 py-2  items-center justify-between`}
+              >
+                <span
+                  className="text-md text-white"
+                  onClick={() => switchTab(tabName)}
+                >
+                  {displayName}
+                </span>
+                <button onClick={() => closeTab(tabName)}>
+                  <MdOutlineClose className="text-white" />
+                </button>
+              </div>
+            </div>
+          );
+        })}
       </div>
       <div>
-        {active === "index.js" && <RootTsxPage />}
-        {active === "header" && <ProjectsMdPage />}
-        {active === "footer" && <BlogsMdPage />}
+        {tabs.length > 0 ? (
+          tabs.map((tabName) => active === tabName && renderTabContent(tabName))
+        ) : (
+          <div className="h-[805px] flex flex-col items-center align-center justify-center">
+            <div>Hello</div>
+          </div>
+        )}
       </div>
     </>
   );

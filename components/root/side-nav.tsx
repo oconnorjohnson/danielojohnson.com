@@ -20,7 +20,7 @@ export default function Component({ children }: { children: React.ReactNode }) {
   const [activeItem, setActiveItem] = useAtom(activeExplorerItem);
   const [isOpen, setIsOpen] = useAtom(isAppFolderOpen);
   const [isPagesOpen, setIsPagesOpen] = useAtom(isPagesTabOpen);
-  const [tabs, setTabs] = useAtom(activeTab);
+  const [tabs, setTabs] = useAtom(openTabs);
   const [, setActive] = useAtom(activeTab);
 
   const handleItemClick = (itemId: string) => {
