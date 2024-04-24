@@ -8,8 +8,8 @@ import {
   motion,
   animate,
 } from "framer-motion";
-
-const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
+// const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
+const COLORS_TOP = [""];
 const MouseMoveEffect = () => {
   const { camera } = useThree();
   const handleMouseMove = useCallback(
@@ -23,7 +23,7 @@ const MouseMoveEffect = () => {
       camera.position.y = y * 0.5;
       camera.lookAt(2, 2, 2);
     },
-    [camera],
+    [camera]
   );
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);

@@ -9,7 +9,9 @@ export default function Title() {
       {/* PERSON */}
       <h1 className="font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg xl:text-2xl">
         <span style={{ color: "#dcdcaa" }}>const</span>{" "}
-        <span style={{ color: "#ce9178" }}>Person</span>
+        <span style={{ color: "#ce9178" }}>
+          Person: <span style={{ color: "#800080" }}>PersonType</span>
+        </span>
         {" = {"}
         <br />
         <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>firstName</span>
@@ -35,7 +37,9 @@ export default function Title() {
       {/* LANGUAGES */}
       <h1 className="font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg xl:text-2xl">
         <span style={{ color: "#dcdcaa" }}>let</span>{" "}
-        <span style={{ color: "#ce9178" }}>Languages</span>
+        <span style={{ color: "#ce9178" }}>
+          Languages: <span style={{ color: "#800080" }}>LanguageType</span>
+        </span>
         {" = {"}
         <br />
         <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
@@ -63,7 +67,9 @@ export default function Title() {
       {/* TOOLS */}
       <h1 className="font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg xl:text-2xl">
         <span style={{ color: "#dcdcaa" }}>let</span>{" "}
-        <span style={{ color: "#ce9178" }}>Tools</span>
+        <span style={{ color: "#ce9178" }}>
+          Tools: <span style={{ color: "#800080" }}>ToolsType</span>
+        </span>
         {" = {"}
         <br />
         <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
@@ -100,7 +106,9 @@ export default function Title() {
       {/* HOBBIES */}
       <h1 className="font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg xl:text-2xl">
         <span style={{ color: "#dcdcaa" }}>let</span>{" "}
-        <span style={{ color: "#ce9178" }}>Hobbies</span>
+        <span style={{ color: "#ce9178" }}>
+          Hobbies: <span style={{ color: "#800080" }}>HobbyType</span>
+        </span>
         {" = {"}
         <br />
         <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>Build</span>
