@@ -63,7 +63,7 @@ export default function Title() {
                 {' "'}
                 <input
                   defaultValue="Daniel Johnson"
-                  className="bg-gray-800 text-yellow-300 w-[151px] font-semilight text-md"
+                  className="bg-gray-800 text-yellow-300 w-[151px] font-semilight text-md mt-1"
                 />
                 {'",'}
                 <br />
@@ -73,8 +73,8 @@ export default function Title() {
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
                 <input
-                  defaultValue="Recruiter"
-                  className="bg-gray-800 text-yellow-300 w-[98px] font-semilight text-md my-2"
+                  defaultValue="Software Engineer"
+                  className="bg-gray-800 text-yellow-300 w-[183px] font-semilight text-md my-1"
                 />
                 {'",'}
                 <br />
@@ -96,7 +96,7 @@ export default function Title() {
                 {' "'}
                 <input
                   defaultValue="5555555555"
-                  className="bg-gray-800 text-yellow-300 w-[107px] font-semilight text-md"
+                  className="bg-gray-800 text-yellow-300 w-[107px] font-semilight text-md my-1"
                 />
                 {'",'}
                 <br />
@@ -107,7 +107,7 @@ export default function Title() {
                 {' "'}
                 <input
                   defaultValue="email"
-                  className="bg-gray-800 text-yellow-300 w-[52px] font-semilight text-md"
+                  className="bg-gray-800 text-yellow-300 w-[52px] font-semilight text-md mb-1"
                 />
                 {'"'}
                 <br />

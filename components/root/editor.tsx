@@ -1,5 +1,6 @@
 "use client";
 import { useAtom } from "jotai";
+import { useEffect } from "react";
 import { activeExplorerItem, openTabs, activeTab } from "@/state/atoms";
 import RootTsxPage from "@/components/root/rootTsxPage";
 import BlogsMdPage from "@/components/root/blogsMdPage";
@@ -91,7 +92,28 @@ export default function Editor() {
       }
     }
   };
+  const closeAllTabs = () => {
+    setTabs([]); // Clear all tabs
+    setActive(""); // Reset active tab
+    setActiveExplorerItem(""); // Reset active explorer item
+  };
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.metaKey && event.shiftKey && event.key === "z") {
+        event.preventDefault(); // Prevent the default browser action
+        closeAllTabs(); // Close all tabs
+      } else if (event.metaKey && event.key === "z") {
+        event.preventDefault(); // Prevent the default browser action
+        closeTab(active); // Close the current tab
+      }
+    };
 
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [tabs, active, closeTab, closeAllTabs]);
   const renderTabContent = (tabName: string) => {
     // Cast tabName to TabName type when using it as a key
     // Use a type assertion only if you're sure tabName will always match a key in tabDisplayNames

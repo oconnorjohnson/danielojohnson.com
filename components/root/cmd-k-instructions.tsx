@@ -13,11 +13,11 @@ export default function CmdKInstructions() {
           </div>
           <div className="flex items-center justify-between">
             <span className="font-semibold pr-4">Close page</span>
-            <span className="bg-gray-700 px-2 py-1 rounded">⌘ + w</span>
+            <span className="bg-gray-700 px-2 py-1 rounded">⌘ + z</span>
           </div>
           <div className="flex items-center justify-between">
             <span className="font-semibold pr-4">Close all</span>
-            <span className="bg-gray-700 px-2 py-1 rounded">⌘ + shift + p</span>
+            <span className="bg-gray-700 px-2 py-1 rounded">⌘ + shift + z</span>
           </div>
         </div>
       </div>
