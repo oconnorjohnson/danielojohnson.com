@@ -19,7 +19,11 @@ export default function Title() {
     <>
       <div className="flex flex-col">
         <div className="w-full bg-gray-800 shadow-xl flex flex-row items-center justify-start pl-4 py-2 text-sm">
-          danielojohnson.com<span className="px-2">{">"}</span>app
+          <span className="hover:font-bold transition-all">
+            danielojohnson.com
+          </span>
+          <span className="px-2">{">"}</span>
+          <span className="hover:font-bold transition-all">app</span>
           <span className="pl-2">{">"}</span>
           <Image
             alt="react file icon"
@@ -28,7 +32,7 @@ export default function Title() {
             height={30}
             className="px-1"
           />{" "}
-          contact.json
+          <span className="hover:font-bold transition-all">contact.json</span>
         </div>
         <ScrollArea className="h-[722px] w-[980px] flex flex-col">
           <div className="flex flex-cols-2 items-start justify-start px-4 py-2 ">
