@@ -4,6 +4,7 @@ import { activeExplorerItem, openTabs, activeTab } from "@/state/atoms";
 import RootTsxPage from "@/components/root/rootTsxPage";
 import BlogsMdPage from "@/components/root/blogsMdPage";
 import ProjectsMdPage from "@/components/root/projectsMdPage";
+import ContactJsonPage from "@/components/root/contactJsonPage";
 import { FcInfo } from "react-icons/fc";
 import { MdOutlineClose } from "react-icons/md";
 import CmdKInstructions from "@/components/root/cmd-k-instructions";
@@ -12,12 +13,13 @@ export default function Editor() {
   const [tabs, setTabs] = useAtom(openTabs);
   const [active, setActive] = useAtom(activeTab);
 
-  type TabName = "index.js" | "header" | "footer";
+  type TabName = "index.js" | "header" | "footer" | "contact";
 
   const tabDisplayNames: Record<TabName, string> = {
     "index.js": "root.tsx",
     header: "projects.md",
     footer: "blogs.md",
+    contact: "contact.json",
   };
   const [, setActiveExplorerItem] = useAtom(activeExplorerItem);
 
@@ -60,6 +62,8 @@ export default function Editor() {
         return <ProjectsMdPage />;
       case "footer":
         return <BlogsMdPage />;
+      case "contact":
+        return <ContactJsonPage />;
       default:
         return null;
     }

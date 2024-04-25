@@ -140,11 +140,9 @@ export default function Component({ children }: { children: React.ReactNode }) {
 
             <div
               className={`flex items-center gap-2 px-2 py-1 rounded ${
-                activeItem === "contact.json"
-                  ? "bg-gray-700"
-                  : "hover:bg-gray-700"
+                activeItem === "contact" ? "bg-gray-700" : "hover:bg-gray-700"
               }`}
-              onClick={() => handleItemClick("contact.json")}
+              onClick={() => handleItemClick("contact")}
             >
               <Image
                 alt="json file icon"
