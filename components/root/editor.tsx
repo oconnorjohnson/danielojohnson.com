@@ -9,10 +9,52 @@ import { FcInfo } from "react-icons/fc";
 import { MdOutlineClose } from "react-icons/md";
 import CmdKInstructions from "@/components/root/cmd-k-instructions";
 import Terminal from "@/components/root/terminal";
+import {
+  DndContext,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import {
+  SortableContext,
+  sortableKeyboardCoordinates,
+  verticalListSortingStrategy,
+  useSortable,
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+
+interface DelayConstraint {
+  delay: number; // duration of hold delay in milliseconds
+  tolerance: number; // movement tolerance in pixels
+}
+
+const delayConstraint = {
+  delay: 250, // 500 milliseconds
+  tolerance: 5, // 5 pixels of tolerated movement
+};
 
 export default function Editor() {
   const [tabs, setTabs] = useAtom(openTabs);
   const [active, setActive] = useAtom(activeTab);
+  const [, setActiveExplorerItem] = useAtom(activeExplorerItem);
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: delayConstraint }),
+    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
+  );
+
+  const handleDragEnd = (event: any) => {
+    const { active, over } = event;
+    if (active.id !== over.id) {
+      const oldIndex = tabs.indexOf(active.id);
+      const newIndex = tabs.indexOf(over.id);
+      const newTabs = Array.from(tabs);
+      newTabs.splice(oldIndex, 1);
+      newTabs.splice(newIndex, 0, active.id);
+      setTabs(newTabs);
+    }
+  };
 
   type TabName = "index.js" | "header" | "footer" | "contact";
 
@@ -22,7 +64,6 @@ export default function Editor() {
     footer: "blogs.md",
     contact: "contact.json",
   };
-  const [, setActiveExplorerItem] = useAtom(activeExplorerItem);
 
   const switchTab = (tabName: string) => {
     setActive(tabName);
@@ -69,47 +110,73 @@ export default function Editor() {
         return null;
     }
   };
+  function isTabName(key: any): key is TabName {
+    return ["index.js", "header", "footer", "contact"].includes(key);
+  }
+  function SortableItem({ id, active, setActive, setActiveExplorerItem }: any) {
+    const { attributes, listeners, setNodeRef, transform, transition } =
+      useSortable({ id });
+    const style = {
+      transform: CSS.Transform.toString(transform),
+      transition,
+    };
+
+    const displayName = isTabName(id) ? tabDisplayNames[id] : "Unknown Tab";
+
+    return (
+      <div
+        ref={setNodeRef}
+        style={style}
+        {...attributes}
+        {...listeners}
+        className={`flex flex-row items-center ${
+          active === id ? "bg-gray-800" : "bg-gray-600"
+        } border-r hover:cursor-pointer border-gray-800 px-4 py-2`}
+      >
+        <div className="text-md text-white" onClick={() => switchTab(id)}>
+          {displayName}
+        </div>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            closeTab(id);
+          }}
+          className="pt-0.5 ml-6"
+        >
+          <MdOutlineClose className="text-white" />
+        </button>
+      </div>
+    );
+  }
 
   return (
     <>
-      <div className="flex flex-row bg-gray-700">
-        {tabs.map((tabName) => {
-          // Use displayName for rendering the tab name in the UI
-          const displayName = tabDisplayNames[tabName as TabName];
-          return (
-            <div className="bg-gray-600">
-              <div
+      <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
+        <SortableContext items={tabs} strategy={verticalListSortingStrategy}>
+          <div className="flex flex-row bg-gray-700">
+            {tabs.map((tabName) => (
+              <SortableItem
                 key={tabName}
-                className={`flex flex-row items-center ${
-                  active === tabName ? "bg-gray-800" : "bg-gray-600"
-                } border-r hover:cursor-pointer border-gray-800 px-4 py-2`}
-              >
-                <div
-                  className="text-md text-white"
-                  onClick={() => switchTab(tabName)}
-                >
-                  {displayName}
-                </div>
-                <button
-                  onClick={() => closeTab(tabName)}
-                  className="pt-0.5 ml-6"
-                >
-                  <MdOutlineClose className="text-white" />
-                </button>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div>
-        {tabs.length > 0 ? (
-          tabs.map((tabName) => active === tabName && renderTabContent(tabName))
-        ) : (
-          <div className="h-[805px] flex flex-col items-center align-center justify-center">
-            <CmdKInstructions />
+                id={tabName}
+                active={active}
+                setActive={setActive}
+                setActiveExplorerItem={setActiveExplorerItem}
+              />
+            ))}
           </div>
-        )}
-      </div>
+        </SortableContext>
+        <div>
+          {tabs.length > 0 ? (
+            tabs.map(
+              (tabName) => active === tabName && renderTabContent(tabName)
+            )
+          ) : (
+            <div className="h-[805px] flex flex-col items-center align-center justify-center">
+              <CmdKInstructions />
+            </div>
+          )}
+        </div>
+      </DndContext>
     </>
   );
 }
