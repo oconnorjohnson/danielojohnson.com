@@ -6,10 +6,8 @@ import RootTsxPage from "@/components/root/rootTsxPage";
 import BlogsMdPage from "@/components/root/blogsMdPage";
 import ProjectsMdPage from "@/components/root/projectsMdPage";
 import ContactJsonPage from "@/components/root/contactJsonPage";
-import { FcInfo } from "react-icons/fc";
 import { MdOutlineClose } from "react-icons/md";
 import CmdKInstructions from "@/components/root/cmd-k-instructions";
-import Terminal from "@/components/root/terminal";
 import {
   DndContext,
   KeyboardSensor,
@@ -25,14 +23,9 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
-interface DelayConstraint {
-  delay: number; // duration of hold delay in milliseconds
-  tolerance: number; // movement tolerance in pixels
-}
-
 const delayConstraint = {
-  delay: 250, // 500 milliseconds
-  tolerance: 5, // 5 pixels of tolerated movement
+  delay: 250,
+  tolerance: 5,
 };
 
 export default function Editor() {
@@ -68,7 +61,7 @@ export default function Editor() {
 
   const switchTab = (tabName: string) => {
     setActive(tabName);
-    setActiveExplorerItem(tabName); // Update the explorer item to reflect the active tab
+    setActiveExplorerItem(tabName);
   };
 
   const closeTab = (tabName: string) => {
@@ -76,13 +69,10 @@ export default function Editor() {
     setTabs(filteredTabs);
     if (active === tabName) {
       if (filteredTabs.length === 0) {
-        // No tabs left, set active tab and explorer item to null or empty
         setActive("");
         setActiveExplorerItem("");
       } else {
-        // Find the index of the tab that was just closed
         const closedTabIndex = tabs.indexOf(tabName);
-        // Determine the new active tab: previous one if possible, otherwise the next one
         const newActiveTab =
           closedTabIndex > 0
             ? filteredTabs[closedTabIndex - 1]
@@ -93,18 +83,18 @@ export default function Editor() {
     }
   };
   const closeAllTabs = () => {
-    setTabs([]); // Clear all tabs
-    setActive(""); // Reset active tab
-    setActiveExplorerItem(""); // Reset active explorer item
+    setTabs([]);
+    setActive("");
+    setActiveExplorerItem("");
   };
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.metaKey && event.shiftKey && event.key === "z") {
-        event.preventDefault(); // Prevent the default browser action
-        closeAllTabs(); // Close all tabs
+        event.preventDefault();
+        closeAllTabs();
       } else if (event.metaKey && event.key === "z") {
-        event.preventDefault(); // Prevent the default browser action
-        closeTab(active); // Close the current tab
+        event.preventDefault();
+        closeTab(active);
       }
     };
 
@@ -115,8 +105,6 @@ export default function Editor() {
     };
   }, [tabs, active, closeTab, closeAllTabs]);
   const renderTabContent = (tabName: string) => {
-    // Cast tabName to TabName type when using it as a key
-    // Use a type assertion only if you're sure tabName will always match a key in tabDisplayNames
     const displayName = tabDisplayNames[tabName as TabName];
 
     switch (tabName) {
