@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Terminal from "@/components/root/terminal";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { MdOutlineClose } from "react-icons/md";
 import { FcInfo } from "react-icons/fc";
+import { ImportIcon } from "lucide-react";
 
 const jsonExample = {
   Name: "John Doe",
@@ -87,14 +89,8 @@ export default function Title() {
               </h1>
             </div>
           </div>
-          <div className="flex flex-col h-[390] w-full items-start bg-gray-900 p-4">
-            <div className="flex flex-row space-x-8 text-xl font-bold  ">
-              <span className="text-gray-200 underline">TERMINAL</span>
-              <span className="text-gray-400">PROBLEMS</span>
-              <span className="text-gray-400">PORTS</span>
-            </div>
-            <div className="flex flex-col py-2"> This is the terminal body</div>
-          </div>
+
+          <Terminal />
         </ScrollArea>
       </div>
     </>

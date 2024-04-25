@@ -8,6 +8,7 @@ import ContactJsonPage from "@/components/root/contactJsonPage";
 import { FcInfo } from "react-icons/fc";
 import { MdOutlineClose } from "react-icons/md";
 import CmdKInstructions from "@/components/root/cmd-k-instructions";
+import Terminal from "@/components/root/terminal";
 
 export default function Editor() {
   const [tabs, setTabs] = useAtom(openTabs);
