@@ -56,27 +56,48 @@ export default function Title() {
               <div>24</div>
               <div>25</div>
             </div>
-            <div className="">
-              <h1 className="font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg ">
+            <div className="pt-2">
+              <h1 className="font-source-code-pro text-gray-500 text-xs sm:text-sm md:text-md lg:text-lg">
+                // fill out the json to get in touch
+              </h1>
+              <h1 className="font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg">
                 {"{"}
                 <br />
+
                 <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
                   name
                 </span>
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
-                <span style={{ color: "#cb4154" }}>Daniel Johnson</span>
+                <input className="bg-gray-800 text-yellow-300 w-[200px] font-semilight text-md" />
                 {'",'}
                 <br />
+
                 <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
                   title
                 </span>
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
-                <span style={{ color: "#cb4154" }}>Software Engineer</span>
+                <input className="bg-gray-800 text-yellow-300 w-[200px] font-semilight text-md" />
+                {'",'}
+                <br />
+
+                <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
+                  email
+                </span>
+                <span style={{ color: "#d4d4d4" }}>:</span>
+                {' "'}
+                <input className="bg-gray-800 text-yellow-300 w-[300px] font-semilight text-md" />
                 {'"'}
                 <br />
                 <span style={{ marginLeft: "" }}>{"}"}</span>
+              </h1>
+
+              <h1 className="font-source-code-pro  text-green-500 text-xs sm:text-sm md:text-md lg:text-lg">
+                //{" "}
+                <button type="submit" className="underline">
+                  Submit.
+                </button>
               </h1>
             </div>
           </div>
