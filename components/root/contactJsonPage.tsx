@@ -27,8 +27,8 @@ export default function Title() {
           />{" "}
           contact.json
         </div>
-        <ScrollArea className="h-[722px] w-[900px]">
-          <div className="flex flex-cols-2 items-start justify-start px-4 py-2">
+        <ScrollArea className="h-[722px] w-[980px] flex flex-col">
+          <div className="flex flex-cols-2 items-start justify-start px-4 py-2 ">
             <div className="flex flex-col pr-8 text-gray-500 items-end font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg  pt-2">
               <div>1</div>
               <div>2</div>
@@ -41,20 +41,6 @@ export default function Title() {
               <div>9</div>
               <div>10</div>
               <div>11</div>
-              <div>12</div>
-              <div>13</div>
-              <div>14</div>
-              <div>15</div>
-              <div>16</div>
-              <div>17</div>
-              <div>18</div>
-              <div>19</div>
-              <div>20</div>
-              <div>21</div>
-              <div>22</div>
-              <div>23</div>
-              <div>24</div>
-              <div>25</div>
             </div>
             <div className="pt-2">
               <h1 className="font-source-code-pro text-gray-500 text-xs sm:text-sm md:text-md lg:text-lg">
@@ -65,7 +51,7 @@ export default function Title() {
                 <br />
 
                 <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
-                  name
+                  "name"
                 </span>
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
@@ -74,20 +60,20 @@ export default function Title() {
                 <br />
 
                 <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
-                  title
+                  "title"
                 </span>
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
-                <input className="bg-gray-800 text-yellow-300 w-[200px] font-semilight text-md" />
+                <input className="bg-gray-800 text-yellow-300 w-[200px] font-semilight text-md my-2" />
                 {'",'}
                 <br />
 
                 <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
-                  email
+                  "email"
                 </span>
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
-                <input className="bg-gray-800 text-yellow-300 w-[300px] font-semilight text-md" />
+                <input className="bg-gray-800 text-yellow-300 w-[200px] font-semilight text-md" />
                 {'"'}
                 <br />
                 <span style={{ marginLeft: "" }}>{"}"}</span>
@@ -100,6 +86,14 @@ export default function Title() {
                 </button>
               </h1>
             </div>
+          </div>
+          <div className="flex flex-col h-[390] w-full items-start bg-gray-900 p-4">
+            <div className="flex flex-row space-x-8 text-xl font-bold  ">
+              <span className="text-gray-200 underline">TERMINAL</span>
+              <span className="text-gray-400">PROBLEMS</span>
+              <span className="text-gray-400">PORTS</span>
+            </div>
+            <div className="flex flex-col py-2"> This is the terminal body</div>
           </div>
         </ScrollArea>
       </div>
