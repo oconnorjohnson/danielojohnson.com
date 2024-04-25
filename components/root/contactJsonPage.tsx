@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Terminal from "@/components/root/terminal";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -51,34 +52,62 @@ export default function Title() {
               <h1 className="font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg">
                 {"{"}
                 <br />
-
                 <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
                   "name"
                 </span>
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
-                <input className="bg-gray-800 text-yellow-300 w-[200px] font-semilight text-md" />
+                <input
+                  defaultValue="Daniel Johnson"
+                  className="bg-gray-800 text-yellow-300 w-[151px] font-semilight text-md"
+                />
                 {'",'}
                 <br />
-
                 <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
                   "title"
                 </span>
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
-                <input className="bg-gray-800 text-yellow-300 w-[200px] font-semilight text-md my-2" />
+                <input
+                  defaultValue="Recruiter"
+                  className="bg-gray-800 text-yellow-300 w-[98px] font-semilight text-md my-2"
+                />
                 {'",'}
                 <br />
-
                 <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
                   "email"
                 </span>
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
-                <input className="bg-gray-800 text-yellow-300 w-[200px] font-semilight text-md" />
+                <input
+                  defaultValue="myaddress@email.com"
+                  className="bg-gray-800 text-yellow-300 w-[205px] font-semilight text-md"
+                />
+                {'",'}
+                <br />
+                <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
+                  "phone"
+                </span>
+                <span style={{ color: "#d4d4d4" }}>:</span>
+                {' "'}
+                <input
+                  defaultValue="5555555555"
+                  className="bg-gray-800 text-yellow-300 w-[107px] font-semilight text-md"
+                />
+                {'",'}
+                <br />
+                <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
+                  "preferredContactMethod"
+                </span>
+                <span style={{ color: "#d4d4d4" }}>:</span>
+                {' "'}
+                <input
+                  defaultValue="email"
+                  className="bg-gray-800 text-yellow-300 w-[52px] font-semilight text-md"
+                />
                 {'"'}
                 <br />
-                <span style={{ marginLeft: "" }}>{"}"}</span>
+                <span style={{ marginLeft: "" }}>{"}"}</span>{" "}
               </h1>
 
               <h1 className="font-source-code-pro  text-green-500 text-xs sm:text-sm md:text-md lg:text-lg">
