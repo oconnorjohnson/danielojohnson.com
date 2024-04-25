@@ -14,3 +14,4 @@
 - [x] add ability to close pages
 - [x] when all pages are closed, show a message to the user with the shortcuts to open a page
 - [x] toggle page view state by side nav items
+- [x] hold, drag, and drop tabs to reorder them
