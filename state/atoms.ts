@@ -8,3 +8,5 @@ export const openTabs = atom<string[]>(["index.js"]);
 export const activeTab = atom<string>("index.js");
 export const lastOpenedTab = atom<string>("index.js");
 export const isTerminalOpen = atomWithStorage("isTerminalOpen", false);
+export const isCommandInputActive = atom<boolean>(false);
+export const commandInputValue = atom<string>("");

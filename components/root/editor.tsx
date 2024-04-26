@@ -1,11 +1,13 @@
 "use client";
 import { useAtom } from "jotai";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   activeExplorerItem,
   openTabs,
   activeTab,
   lastOpenedTab,
+  commandInputValue,
+  isCommandInputActive,
 } from "@/state/atoms";
 import RootTsxPage from "@/components/root/rootTsxPage";
 import BlogsMdPage from "@/components/root/blogsMdPage";
@@ -37,8 +39,67 @@ export default function Editor() {
   const [tabs, setTabs] = useAtom(openTabs);
   const [active, setActive] = useAtom(activeTab);
   const [, setActiveExplorerItem] = useAtom(activeExplorerItem);
+  const [inputValue, setInputValue] = useAtom(commandInputValue);
+  const [isActive, setIsActive] = useAtom(isCommandInputActive);
   // const [lastTab, setLastTab] = useAtom(lastOpenedTab);
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.metaKey && event.key === "o") {
+        // Ensure lowercase comparison
+        event.preventDefault();
+        console.log("Command + B pressed"); // Debugging log
+        setIsActive(true);
+      }
+    };
 
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [setIsActive]); // Ensure dependencies are correct
+  useEffect(() => {
+    console.log("Active tab changed to:", active); // Debugging log for active tab
+  }, [active]);
+  useEffect(() => {
+    console.log("Active tab is now:", active);
+    console.log("Tabs available:", tabs);
+  }, [active, tabs]);
+  useEffect(() => {
+    console.log("Command input active state is now:", isActive); // Debugging log for input active state
+  }, [isActive]);
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+  };
+
+  const openPage = (pageName: string) => {
+    const pageMap: Record<string, string> = {
+      "root.tsx": "index.js",
+      "projects.md": "header",
+      "blogs.md": "footer",
+      "contact.json": "contact",
+    };
+
+    const pageId = pageMap[pageName];
+    console.log("Attempting to open page:", pageName, "Mapped ID:", pageId); // Debugging log
+
+    if (pageId) {
+      if (!tabs.includes(pageId)) {
+        setTabs([...tabs, pageId]); // Add the new tab to the tabs array if not already included
+      }
+      setActive(pageId);
+      setIsActive(false);
+      setInputValue("");
+    } else {
+      console.log("No valid page found for:", pageName); // Debugging log
+    }
+  };
+
+  const handleInputConfirm = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      openPage(inputValue);
+      console.log("Enter pressed, opening page:", inputValue);
+    }
+  };
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: delayConstraint }),
     useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
@@ -119,9 +180,6 @@ export default function Editor() {
       } else if (event.metaKey && event.key === "z") {
         event.preventDefault();
         closeTab(active);
-      } else if (event.metaKey && event.key === "b") {
-        event.preventDefault();
-        // openLastTab();
       }
     };
 
@@ -132,7 +190,7 @@ export default function Editor() {
     };
   }, [tabs, active, closeTab, closeAllTabs]);
   const renderTabContent = (tabName: string) => {
-    const displayName = tabDisplayNames[tabName as TabName];
+    console.log("Rendering content for tab:", tabName); // Debugging log
 
     switch (tabName) {
       case "index.js":
@@ -144,6 +202,7 @@ export default function Editor() {
       case "contact":
         return <ContactJsonPage />;
       default:
+        console.log("No content available for tab:", tabName); // Debugging log
         return null;
     }
   };
@@ -188,6 +247,16 @@ export default function Editor() {
 
   return (
     <>
+      {isActive && (
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          onKeyDown={handleInputConfirm}
+          placeholder="Type a page name..."
+          autoFocus
+        />
+      )}
       <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
         <SortableContext items={tabs} strategy={verticalListSortingStrategy}>
           <div className="flex flex-row bg-gray-700">
