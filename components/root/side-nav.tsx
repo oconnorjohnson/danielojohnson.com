@@ -51,7 +51,7 @@ export default function Component({ children }: { children: React.ReactNode }) {
             <FcFolder className="h-8 w-8" />
             <span className="font-semibold">Explorer</span>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-1">
             <Collapsible open={isOpen}>
               <CollapsibleTrigger
                 className={`flex items-center justify-between w-full px-2 py-1 rounded ${
