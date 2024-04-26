@@ -35,7 +35,7 @@ export default function Title() {
           <span className="hover:font-bold transition-all">contact.json</span>
         </div>
         <ScrollArea className="h-[722px] w-[980px] flex flex-col">
-          <div className="flex flex-cols-2 items-start justify-start px-4 py-2 ">
+          <div className="flex flex-cols-2 items-start justify-start px-4 pt-2 pb-40 ">
             <div className="flex flex-col pr-8 text-gray-500 items-end font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg  pt-2">
               <div>1</div>
               <div>2</div>
@@ -114,7 +114,7 @@ export default function Title() {
                 <span style={{ marginLeft: "" }}>{"}"}</span>{" "}
               </h1>
 
-              <h1 className="font-source-code-pro  text-green-500 text-xs sm:text-sm md:text-md lg:text-lg">
+              <h1 className="font-source-code-pro text-green-500 text-xs sm:text-sm md:text-md lg:text-lg">
                 //{" "}
                 <button type="submit" className="underline">
                   Submit.
@@ -123,7 +123,7 @@ export default function Title() {
             </div>
           </div>
 
-          <Terminal />
+          {/* <Terminal /> */}
         </ScrollArea>
       </div>
     </>

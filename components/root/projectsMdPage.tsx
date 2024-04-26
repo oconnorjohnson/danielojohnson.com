@@ -52,6 +52,13 @@ export default function Title() {
               <div>23</div>
               <div>24</div>
               <div>25</div>
+              <div>26</div>
+              <div>27</div>
+              <div>28</div>
+              <div>29</div>
+              <div>30</div>
+              <div>31</div>
+              <div>32</div>
             </div>
             <div className="pt-2">
               {/* PERSON */}
@@ -66,31 +73,31 @@ export default function Title() {
                 </span>
                 <br />
                 <span className="">
-                  Finance and asset distribution management for Yolo
-                  County&apos;s nonprofit, CARES.
+                  A financial and asset acquisition{"/"}distribution management
+                  platform for Yolo County&apos;s nonprofit, CARES.
                 </span>
                 <br />
                 <span className="text-yellow-300">
                   {"- ["}
                   <a
-                    href="https://github.com/oconnorjohnson/milli-agent"
+                    href="https://yolopublicdefendercares.org"
                     target="_blank"
                     rel="noreferrer"
                     className="text-cyan-400"
                   >
-                    GitHub
+                    Live Demo
                   </a>
                   {"]"}
-                  {'("'}
+                  {"("}
                   <a
-                    href="https://github.com/oconnorjohnson/milli-agent"
+                    href="https://yolopublicdefendercares.org"
                     target="_blank"
                     rel="noreferrer"
                     className=" underline"
                   >
-                    {"https://github.com/oconnorjohnson/milli-agent"}
+                    https://yolopublicdefendercares.org
                   </a>
-                  {'")'}
+                  {")"}
                 </span>
                 <div className="pt-7" />
                 <span className="font-bold" style={{ color: "#9cdcfe" }}>
@@ -98,8 +105,9 @@ export default function Title() {
                 </span>
                 <br />
                 <span className="">
-                  Personal project built to transcribe and analyze lengthy
-                  brainstorming sessions.
+                  TV writing assistant that transcribes, analyzes and tracks
+                  5-10 hour brainstorming sessions between myself and my writing
+                  partner.
                 </span>
                 <br />
                 <span className="text-yellow-300">
@@ -113,7 +121,7 @@ export default function Title() {
                     Live Demo
                   </a>
                   {"]"}
-                  {'("'}
+                  {"("}
                   <a
                     href="https://bootlegmilli.com"
                     target="_blank"
@@ -122,7 +130,7 @@ export default function Title() {
                   >
                     {"https://bootlegmilli.com"}
                   </a>
-                  {'")'}
+                  {")"}
                 </span>
                 <br />
                 <span className="text-yellow-300">
@@ -136,7 +144,7 @@ export default function Title() {
                     GitHub
                   </a>
                   {"]"}
-                  {'("'}
+                  {"("}
                   <a
                     href="https://github.com/oconnorjohnson/milli-agent"
                     target="_blank"
@@ -145,7 +153,7 @@ export default function Title() {
                   >
                     {"https://github.com/oconnorjohnson/milli-agent"}
                   </a>
-                  {'")'}
+                  {")"}
                 </span>
                 <div className="pt-7" />
                 <span className="font-bold" style={{ color: "#9cdcfe" }}>
@@ -153,8 +161,64 @@ export default function Title() {
                 </span>
                 <br />
                 <span className="">
-                  Simplified case management for all agencies of the criminal
-                  justice system.
+                  Currently building Babylon to bring interconnected case
+                  management systems to all agencies of the criminal justice
+                  system.
+                </span>
+                <br />
+                <span className="text-yellow-300">
+                  {"- ["}
+                  <a
+                    href="https://babylon.legal"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-cyan-400"
+                  >
+                    Waitlist
+                  </a>
+                  {"]"}
+                  {"("}
+                  <a
+                    href="https://babylon.legal"
+                    target="_blank"
+                    rel="noreferrer"
+                    className=" underline"
+                  >
+                    {"https://babylon.legal"}
+                  </a>
+                  {")"}
+                </span>
+                <div className="pt-7" />
+                <span className="font-bold" style={{ color: "#9cdcfe" }}>
+                  ## My Portfolio
+                </span>
+                <br />
+                <span className="">
+                  This was a fun venture in UI design and exploring the state
+                  management library, Jotai.
+                </span>
+                <br />
+                <span className="text-yellow-300">
+                  {"- ["}
+                  <a
+                    href="https://github.com/oconnorjohnson/danielojohnson.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-cyan-400"
+                  >
+                    GitHub
+                  </a>
+                  {"]"}
+                  {"("}
+                  <a
+                    href="https://github.com/oconnorjohnson/danielojohnson.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className=" underline"
+                  >
+                    {"https://github.com/oconnorjohnson/danielojohnson.com"}
+                  </a>
+                  {")"}
                 </span>
                 <div className="pt-7" />
                 <span className="font-bold" style={{ color: "#9cdcfe" }}>
@@ -164,8 +228,9 @@ export default function Title() {
                 <span className="">
                   A simple chatbot enhanced with embedding creation to enable
                   context-aware retrieval and interaction based on a user&apos;s
-                  videos.
+                  YouTube videos and their comments.
                 </span>
+                <br />
                 <span className="text-yellow-300">
                   {"- ["}
                   <a
@@ -177,7 +242,7 @@ export default function Title() {
                     Live Demo
                   </a>
                   {"]"}
-                  {'("'}
+                  {"("}
                   <a
                     href="https://bootlegmilli.com"
                     target="_blank"
@@ -186,7 +251,7 @@ export default function Title() {
                   >
                     {"https://bootlegmilli.com"}
                   </a>
-                  {'")'}
+                  {")"}
                 </span>
                 <br />
                 <span className="text-yellow-300">
@@ -200,7 +265,7 @@ export default function Title() {
                     GitHub
                   </a>
                   {"]"}
-                  {'("'}
+                  {"("}
                   <a
                     href="https://github.com/oconnorjohnson/milli-agent"
                     target="_blank"
@@ -209,39 +274,9 @@ export default function Title() {
                   >
                     {"https://github.com/oconnorjohnson/milli-agent"}
                   </a>
-                  {'")'}
+                  {")"}
                 </span>
-                <div className="pt-7" />
-                <span className="font-bold" style={{ color: "#9cdcfe" }}>
-                  ## My Portfolio
-                </span>
-                <br />
-                <span className="">
-                  This was a fun venture in exploring the capabilities of Jotai.
-                </span>
-                <br />
-                <span className="text-yellow-300">
-                  {"- ["}
-                  <a
-                    href="https://github.com/oconnorjohnson/milli-agent"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-cyan-400"
-                  >
-                    GitHub
-                  </a>
-                  {"]"}
-                  {'("'}
-                  <a
-                    href="https://github.com/oconnorjohnson/milli-agent"
-                    target="_blank"
-                    rel="noreferrer"
-                    className=" underline"
-                  >
-                    {"https://github.com/oconnorjohnson/milli-agent"}
-                  </a>
-                  {'")'}
-                </span>
+
                 <div className="pt-7" />
               </h1>
             </div>

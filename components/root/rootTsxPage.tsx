@@ -1,17 +1,17 @@
 import Image from "next/image";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { MdOutlineClose } from "react-icons/md";
-import { FcInfo } from "react-icons/fc";
+import { FcFolder } from "react-icons/fc";
 export default function Title() {
   return (
     <>
       <div className="flex flex-col">
-        <div className="w-full bg-gray-800 shadow-xl flex flex-row items-center justify-start pl-4 py-2 text-sm">
-          <span className="hover:font-bold transition-all">
+        <div className="w-full bg-gray-800 shadow-xl flex flex-row items-center justify-start pl-4 py-2 text-lg text-gray-400">
+          <span className=" hover:font-bold transition-all">
             danielojohnson.com
           </span>
           <span className="px-2">{">"}</span>{" "}
-          <span className="hover:font-bold transition-all">app</span>
+          <span className=" hover:font-bold transition-all">app</span>
           <span className="pl-2">{">"}</span>
           <Image
             alt="react file icon"

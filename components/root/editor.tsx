@@ -170,7 +170,7 @@ export default function Editor() {
           active === id ? "bg-gray-800" : "bg-gray-600"
         } border-r hover:cursor-pointer border-gray-800 px-4 py-2`}
       >
-        <div className="text-md text-white" onClick={() => switchTab(id)}>
+        <div className="text-lg text-white" onClick={() => switchTab(id)}>
           {displayName}
         </div>
         <button
