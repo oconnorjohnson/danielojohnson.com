@@ -5,7 +5,7 @@ import {
   activeExplorerItem,
   openTabs,
   activeTab,
-  // lastOpenedTab,
+  lastOpenedTab,
 } from "@/state/atoms";
 import RootTsxPage from "@/components/root/rootTsxPage";
 import BlogsMdPage from "@/components/root/blogsMdPage";
@@ -101,6 +101,11 @@ export default function Editor() {
     }
   };
 
+  // const openLastTab = () => {
+  //   switchTab(lastTab);
+  //   setActiveExplorerItem(lastTab);
+  // };
+
   const closeAllTabs = () => {
     setTabs([]);
     setActive("");
@@ -114,9 +119,9 @@ export default function Editor() {
       } else if (event.metaKey && event.key === "z") {
         event.preventDefault();
         closeTab(active);
-        // } else if (event.metaKey && event.key === "b") {
-        //   event.preventDefault();
-        //   openLastTab(lastTab);
+      } else if (event.metaKey && event.key === "b") {
+        event.preventDefault();
+        // openLastTab();
       }
     };
 
