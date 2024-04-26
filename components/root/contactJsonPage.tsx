@@ -34,7 +34,7 @@ export default function Title() {
           />{" "}
           <span className="hover:font-bold transition-all">contact.json</span>
         </div>
-        <ScrollArea className="h-[722px] w-[980px] flex flex-col">
+        <ScrollArea className="h-[722px] w-[900px] flex flex-col">
           <div className="flex flex-cols-2 items-start justify-start px-4 pt-2 pb-40 ">
             <div className="flex flex-col pr-8 text-gray-500 items-end font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg  pt-2">
               <div>1</div>
