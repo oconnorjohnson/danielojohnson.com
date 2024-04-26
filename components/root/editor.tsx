@@ -1,7 +1,12 @@
 "use client";
 import { useAtom } from "jotai";
 import { useEffect } from "react";
-import { activeExplorerItem, openTabs, activeTab } from "@/state/atoms";
+import {
+  activeExplorerItem,
+  openTabs,
+  activeTab,
+  // lastOpenedTab,
+} from "@/state/atoms";
 import RootTsxPage from "@/components/root/rootTsxPage";
 import BlogsMdPage from "@/components/root/blogsMdPage";
 import ProjectsMdPage from "@/components/root/projectsMdPage";
@@ -32,6 +37,7 @@ export default function Editor() {
   const [tabs, setTabs] = useAtom(openTabs);
   const [active, setActive] = useAtom(activeTab);
   const [, setActiveExplorerItem] = useAtom(activeExplorerItem);
+  // const [lastTab, setLastTab] = useAtom(lastOpenedTab);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: delayConstraint }),
@@ -40,13 +46,17 @@ export default function Editor() {
 
   const handleDragEnd = (event: any) => {
     const { active, over } = event;
-    if (active.id !== over.id) {
+    if (over && active.id !== over.id) {
       const oldIndex = tabs.indexOf(active.id);
       const newIndex = tabs.indexOf(over.id);
-      const newTabs = Array.from(tabs);
-      newTabs.splice(oldIndex, 1);
-      newTabs.splice(newIndex, 0, active.id);
-      setTabs(newTabs);
+
+      if (newIndex >= 0) {
+        // Additional check to ensure newIndex is valid
+        const newTabs = Array.from(tabs);
+        newTabs.splice(oldIndex, 1);
+        newTabs.splice(newIndex, 0, active.id);
+        setTabs(newTabs);
+      }
     }
   };
 
@@ -61,8 +71,14 @@ export default function Editor() {
 
   const switchTab = (tabName: string) => {
     setActive(tabName);
+    // setLastTab(tabName);
     setActiveExplorerItem(tabName);
   };
+
+  // const openLastTab = (tabName: string) => {
+  //   switchTab(tabName);
+  //   setActiveExplorerItem(tabName);
+  // };
 
   const closeTab = (tabName: string) => {
     const filteredTabs = tabs.filter((tab) => tab !== tabName);
@@ -71,6 +87,7 @@ export default function Editor() {
       if (filteredTabs.length === 0) {
         setActive("");
         setActiveExplorerItem("");
+        // setLastTab("");
       } else {
         const closedTabIndex = tabs.indexOf(tabName);
         const newActiveTab =
@@ -78,10 +95,12 @@ export default function Editor() {
             ? filteredTabs[closedTabIndex - 1]
             : filteredTabs[0];
         setActive(newActiveTab);
+        // setLastTab(newActiveTab);
         setActiveExplorerItem(newActiveTab);
       }
     }
   };
+
   const closeAllTabs = () => {
     setTabs([]);
     setActive("");
@@ -95,6 +114,9 @@ export default function Editor() {
       } else if (event.metaKey && event.key === "z") {
         event.preventDefault();
         closeTab(active);
+        // } else if (event.metaKey && event.key === "b") {
+        //   event.preventDefault();
+        //   openLastTab(lastTab);
       }
     };
 

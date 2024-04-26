@@ -102,7 +102,7 @@ export default function Component({ children }: { children: React.ReactNode }) {
                       ) : (
                         <FcFolder className="h-6 w-6" />
                       )}
-                      <span>README</span>
+                      <span>components</span>
                     </div>
                     {isPagesOpen ? (
                       <MdArrowDropDown className="h-6 w-6" />
