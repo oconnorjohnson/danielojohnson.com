@@ -218,14 +218,17 @@ export default function Editor() {
   return (
     <>
       {isActive && (
-        <input
-          type="text"
-          value={inputValue}
-          onChange={handleInputChange}
-          onKeyDown={handleInputConfirm}
-          placeholder="Type a page name..."
-          autoFocus
-        />
+        <>
+          <input
+            type="text"
+            className=" items-center justify-center p-1 bg-gray-900 text-gray-100 w-full"
+            value={inputValue}
+            onChange={handleInputChange}
+            onKeyDown={handleInputConfirm}
+            placeholder="Type a page name..."
+            autoFocus
+          />
+        </>
       )}
       <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
         <SortableContext items={tabs} strategy={verticalListSortingStrategy}>
