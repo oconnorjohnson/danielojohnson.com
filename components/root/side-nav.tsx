@@ -42,7 +42,7 @@ export default function Component({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="flex flex-row h-full overflow-auto">
-      <div className="w-72 bg-gray-900 text-gray-100">
+      <div className="w-80 bg-gray-900 text-gray-100">
         <div className="p-4">
           <div className="flex items-center gap-2 mb-6">
             <FcFolder className="h-8 w-8" />
@@ -84,7 +84,7 @@ export default function Component({ children }: { children: React.ReactNode }) {
                     src="/react.svg"
                     width={30}
                     height={30}
-                    className="pr-1"
+                    className=""
                   />
                   <span>root.tsx</span>
                 </div>
@@ -148,7 +148,7 @@ export default function Component({ children }: { children: React.ReactNode }) {
                 height={25}
                 className="px-1"
               />
-              <span>contact.json</span>
+              <span className="pr-24">contact.json</span>
             </div>
           </div>
         </div>
