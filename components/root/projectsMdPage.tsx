@@ -66,8 +66,31 @@ export default function Title() {
                 </span>
                 <br />
                 <span className="">
-                  Finance, asset, and donation distribution management for Yolo
-                  County&apos;s CARES nonprofit.
+                  Finance and asset distribution management for Yolo
+                  County&apos;s nonprofit, CARES.
+                </span>
+                <br />
+                <span className="text-yellow-300">
+                  {"- ["}
+                  <a
+                    href="https://github.com/oconnorjohnson/milli-agent"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-cyan-400"
+                  >
+                    GitHub
+                  </a>
+                  {"]"}
+                  {'("'}
+                  <a
+                    href="https://github.com/oconnorjohnson/milli-agent"
+                    target="_blank"
+                    rel="noreferrer"
+                    className=" underline"
+                  >
+                    {"https://github.com/oconnorjohnson/milli-agent"}
+                  </a>
+                  {'")'}
                 </span>
                 <div className="pt-7" />
                 <span className="font-bold" style={{ color: "#9cdcfe" }}>
@@ -77,6 +100,52 @@ export default function Title() {
                 <span className="">
                   Personal project built to transcribe and analyze lengthy
                   brainstorming sessions.
+                </span>
+                <br />
+                <span className="text-yellow-300">
+                  {"- ["}
+                  <a
+                    href="https://bootlegmilli.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-cyan-400"
+                  >
+                    Live Demo
+                  </a>
+                  {"]"}
+                  {'("'}
+                  <a
+                    href="https://bootlegmilli.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className=" underline"
+                  >
+                    {"https://bootlegmilli.com"}
+                  </a>
+                  {'")'}
+                </span>
+                <br />
+                <span className="text-yellow-300">
+                  {"- ["}
+                  <a
+                    href="https://github.com/oconnorjohnson/milli-agent"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-cyan-400"
+                  >
+                    GitHub
+                  </a>
+                  {"]"}
+                  {'("'}
+                  <a
+                    href="https://github.com/oconnorjohnson/milli-agent"
+                    target="_blank"
+                    rel="noreferrer"
+                    className=" underline"
+                  >
+                    {"https://github.com/oconnorjohnson/milli-agent"}
+                  </a>
+                  {'")'}
                 </span>
                 <div className="pt-7" />
                 <span className="font-bold" style={{ color: "#9cdcfe" }}>
@@ -97,6 +166,51 @@ export default function Title() {
                   context-aware retrieval and interaction based on a user&apos;s
                   videos.
                 </span>
+                <span className="text-yellow-300">
+                  {"- ["}
+                  <a
+                    href="https://bootlegmilli.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-cyan-400"
+                  >
+                    Live Demo
+                  </a>
+                  {"]"}
+                  {'("'}
+                  <a
+                    href="https://bootlegmilli.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className=" underline"
+                  >
+                    {"https://bootlegmilli.com"}
+                  </a>
+                  {'")'}
+                </span>
+                <br />
+                <span className="text-yellow-300">
+                  {"- ["}
+                  <a
+                    href="https://github.com/oconnorjohnson/milli-agent"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-cyan-400"
+                  >
+                    GitHub
+                  </a>
+                  {"]"}
+                  {'("'}
+                  <a
+                    href="https://github.com/oconnorjohnson/milli-agent"
+                    target="_blank"
+                    rel="noreferrer"
+                    className=" underline"
+                  >
+                    {"https://github.com/oconnorjohnson/milli-agent"}
+                  </a>
+                  {'")'}
+                </span>
                 <div className="pt-7" />
                 <span className="font-bold" style={{ color: "#9cdcfe" }}>
                   ## My Portfolio
@@ -104,6 +218,29 @@ export default function Title() {
                 <br />
                 <span className="">
                   This was a fun venture in exploring the capabilities of Jotai.
+                </span>
+                <br />
+                <span className="text-yellow-300">
+                  {"- ["}
+                  <a
+                    href="https://github.com/oconnorjohnson/milli-agent"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-cyan-400"
+                  >
+                    GitHub
+                  </a>
+                  {"]"}
+                  {'("'}
+                  <a
+                    href="https://github.com/oconnorjohnson/milli-agent"
+                    target="_blank"
+                    rel="noreferrer"
+                    className=" underline"
+                  >
+                    {"https://github.com/oconnorjohnson/milli-agent"}
+                  </a>
+                  {'")'}
                 </span>
                 <div className="pt-7" />
               </h1>
