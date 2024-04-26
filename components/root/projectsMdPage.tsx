@@ -234,7 +234,7 @@ export default function Title() {
                 <span className="text-yellow-300">
                   {"- ["}
                   <a
-                    href="https://bootlegmilli.com"
+                    href="https://pocketpr.app"
                     target="_blank"
                     rel="noreferrer"
                     className="text-cyan-400"
@@ -244,20 +244,20 @@ export default function Title() {
                   {"]"}
                   {"("}
                   <a
-                    href="https://bootlegmilli.com"
+                    href="https://pocketpr.app"
                     target="_blank"
                     rel="noreferrer"
                     className=" underline"
                   >
-                    {"https://bootlegmilli.com"}
+                    {"https://pocketpr.app"}
                   </a>
                   {")"}
                 </span>
                 <br />
-                <span className="text-yellow-300">
+                {/* <span className="text-yellow-300">
                   {"- ["}
                   <a
-                    href="https://github.com/oconnorjohnson/milli-agent"
+                    href="https://github.com/foreveryone-ai/pocket-pr-app"
                     target="_blank"
                     rel="noreferrer"
                     className="text-cyan-400"
@@ -267,15 +267,15 @@ export default function Title() {
                   {"]"}
                   {"("}
                   <a
-                    href="https://github.com/oconnorjohnson/milli-agent"
+                    href="https://github.com/foreveryone-ai/pocket-pr-app"
                     target="_blank"
                     rel="noreferrer"
                     className=" underline"
                   >
-                    {"https://github.com/oconnorjohnson/milli-agent"}
+                    {"https://github.com/foreveryone-ai/pocket-pr-app"}
                   </a>
                   {")"}
-                </span>
+                </span> */}
 
                 <div className="pt-7" />
               </h1>
