@@ -25,27 +25,24 @@ export default function Component({ children }: { children: React.ReactNode }) {
 
   const handleItemClick = (itemId: string) => {
     setActiveItem(itemId);
-    // Check if the tab is already open
     if (!tabs.includes(itemId)) {
-      // Correctly update the openTabs atom
       setTabs((prevTabs) => [...prevTabs, itemId]);
     }
-    // Correctly update the activeTab atom
     console.log("active item:", itemId);
     setActive(itemId);
   };
 
   const handleAppFolderOpen = () => {
-    setIsOpen((prev) => !prev); // Correctly toggle the state
+    setIsOpen((prev) => !prev);
   };
 
   const handlePagesFolderOpen = () => {
-    setIsPagesOpen((prev) => !prev); // This is sufficient for toggling and persisting state
+    setIsPagesOpen((prev) => !prev);
   };
 
   return (
     <div className="flex flex-row h-full overflow-auto">
-      <div className="w-64 bg-gray-900 text-gray-100">
+      <div className="w-72 bg-gray-900 text-gray-100">
         <div className="p-4">
           <div className="flex items-center gap-2 mb-6">
             <FcFolder className="h-8 w-8" />

@@ -5,7 +5,6 @@ import {
   activeExplorerItem,
   openTabs,
   activeTab,
-  lastOpenedTab,
   commandInputValue,
   isCommandInputActive,
 } from "@/state/atoms";
@@ -30,47 +29,43 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
-const delayConstraint = {
-  delay: 250,
-  tolerance: 5,
-};
-
 export default function Editor() {
   const [tabs, setTabs] = useAtom(openTabs);
   const [active, setActive] = useAtom(activeTab);
   const [, setActiveExplorerItem] = useAtom(activeExplorerItem);
   const [inputValue, setInputValue] = useAtom(commandInputValue);
   const [isActive, setIsActive] = useAtom(isCommandInputActive);
-  // const [lastTab, setLastTab] = useAtom(lastOpenedTab);
+  const delayConstraint = {
+    delay: 250,
+    tolerance: 5,
+  };
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.metaKey && event.key === "o") {
-        // Ensure lowercase comparison
         event.preventDefault();
-        console.log("Command + B pressed"); // Debugging log
         setIsActive(true);
       }
     };
-
     window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [setIsActive]); // Ensure dependencies are correct
-  useEffect(() => {
-    console.log("Active tab changed to:", active); // Debugging log for active tab
-  }, [active]);
-  useEffect(() => {
-    console.log("Active tab is now:", active);
-    console.log("Tabs available:", tabs);
-  }, [active, tabs]);
-  useEffect(() => {
-    console.log("Command input active state is now:", isActive); // Debugging log for input active state
-  }, [isActive]);
+  }, [setIsActive]);
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
-
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsActive(false);
+        setInputValue("");
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [setIsActive, setInputValue]);
   const openPage = (pageName: string) => {
     const pageMap: Record<string, string> = {
       "root.tsx": "index.js",
@@ -78,26 +73,19 @@ export default function Editor() {
       "blogs.md": "footer",
       "contact.json": "contact",
     };
-
     const pageId = pageMap[pageName];
-    console.log("Attempting to open page:", pageName, "Mapped ID:", pageId); // Debugging log
-
     if (pageId) {
       if (!tabs.includes(pageId)) {
-        setTabs([...tabs, pageId]); // Add the new tab to the tabs array if not already included
+        setTabs([...tabs, pageId]);
       }
       setActive(pageId);
       setIsActive(false);
       setInputValue("");
-    } else {
-      console.log("No valid page found for:", pageName); // Debugging log
     }
   };
-
   const handleInputConfirm = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       openPage(inputValue);
-      console.log("Enter pressed, opening page:", inputValue);
     }
   };
   const sensors = useSensors(
@@ -110,9 +98,7 @@ export default function Editor() {
     if (over && active.id !== over.id) {
       const oldIndex = tabs.indexOf(active.id);
       const newIndex = tabs.indexOf(over.id);
-
       if (newIndex >= 0) {
-        // Additional check to ensure newIndex is valid
         const newTabs = Array.from(tabs);
         newTabs.splice(oldIndex, 1);
         newTabs.splice(newIndex, 0, active.id);
@@ -132,14 +118,8 @@ export default function Editor() {
 
   const switchTab = (tabName: string) => {
     setActive(tabName);
-    // setLastTab(tabName);
     setActiveExplorerItem(tabName);
   };
-
-  // const openLastTab = (tabName: string) => {
-  //   switchTab(tabName);
-  //   setActiveExplorerItem(tabName);
-  // };
 
   const closeTab = (tabName: string) => {
     const filteredTabs = tabs.filter((tab) => tab !== tabName);
@@ -148,7 +128,6 @@ export default function Editor() {
       if (filteredTabs.length === 0) {
         setActive("");
         setActiveExplorerItem("");
-        // setLastTab("");
       } else {
         const closedTabIndex = tabs.indexOf(tabName);
         const newActiveTab =
@@ -156,16 +135,10 @@ export default function Editor() {
             ? filteredTabs[closedTabIndex - 1]
             : filteredTabs[0];
         setActive(newActiveTab);
-        // setLastTab(newActiveTab);
         setActiveExplorerItem(newActiveTab);
       }
     }
   };
-
-  // const openLastTab = () => {
-  //   switchTab(lastTab);
-  //   setActiveExplorerItem(lastTab);
-  // };
 
   const closeAllTabs = () => {
     setTabs([]);
@@ -190,8 +163,6 @@ export default function Editor() {
     };
   }, [tabs, active, closeTab, closeAllTabs]);
   const renderTabContent = (tabName: string) => {
-    console.log("Rendering content for tab:", tabName); // Debugging log
-
     switch (tabName) {
       case "index.js":
         return <RootTsxPage />;
@@ -202,8 +173,7 @@ export default function Editor() {
       case "contact":
         return <ContactJsonPage />;
       default:
-        console.log("No content available for tab:", tabName); // Debugging log
-        return null;
+        return <CmdKInstructions />;
     }
   };
   function isTabName(key: any): key is TabName {

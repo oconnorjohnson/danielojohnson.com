@@ -12,10 +12,6 @@ export default function CmdKInstructions() {
             <span className="bg-gray-700 px-2 py-1 rounded">⌘ + p</span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="font-semibold pr-4">Open last page</span>
-            <span className="bg-gray-700 px-2 py-1 rounded">⌘ + shift + b</span>
-          </div>
-          <div className="flex items-center justify-between">
             <span className="font-semibold pr-4">Close page</span>
             <span className="bg-gray-700 px-2 py-1 rounded">⌘ + z</span>
           </div>

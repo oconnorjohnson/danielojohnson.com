@@ -6,7 +6,5 @@ export const isAppFolderOpen = atomWithStorage("isAppFolderOpen", true);
 export const isPagesTabOpen = atomWithStorage("isPagesOpen", false);
 export const openTabs = atom<string[]>(["index.js"]);
 export const activeTab = atom<string>("index.js");
-export const lastOpenedTab = atom<string>("index.js");
-export const isTerminalOpen = atomWithStorage("isTerminalOpen", false);
 export const isCommandInputActive = atom<boolean>(false);
 export const commandInputValue = atom<string>("");
