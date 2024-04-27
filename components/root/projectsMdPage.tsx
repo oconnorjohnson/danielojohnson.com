@@ -55,10 +55,7 @@ export default function Title() {
               <div>26</div>
               <div>27</div>
               <div>28</div>
-              <div>29</div>
-              <div>30</div>
-              <div>31</div>
-              <div>32</div>
+              <div>29</div>{" "}
             </div>
             <div className="pt-2">
               {/* PERSON */}
