@@ -6,7 +6,7 @@ export default function Title() {
   return (
     <>
       <div className="flex flex-col">
-        <div className="w-full bg-gray-800 shadow-xl flex flex-row items-center justify-start pl-4 py-2 text-lg text-gray-400">
+        <div className="w-full bg-gray-800 shadow-xl flex flex-row items-center justify-start pl-4 py-2 text-md text-gray-400">
           <span className=" hover:font-bold transition-all">
             danielojohnson.com
           </span>
