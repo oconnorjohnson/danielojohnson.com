@@ -1,10 +1,8 @@
 "use client";
 import Image from "next/image";
-import Terminal from "@/components/root/terminal";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { MdOutlineClose } from "react-icons/md";
-import { FcInfo } from "react-icons/fc";
-import { ImportIcon } from "lucide-react";
+import { createMessage } from "@/server/actions/post";
+import { useFormStatus } from "react-dom";
 
 const jsonExample = {
   Name: "John Doe",
@@ -15,6 +13,7 @@ const jsonExample = {
 };
 
 export default function Title() {
+  const { pending } = useFormStatus();
   return (
     <>
       <div className="flex flex-col">
@@ -49,7 +48,7 @@ export default function Title() {
               <div>10</div>
               <div>11</div>
             </div>
-            <div className="pt-2">
+            <form action={createMessage} method="post" className="pt-2">
               <h1 className="font-source-code-pro text-gray-500 text-xs sm:text-sm md:text-md lg:text-lg">
                 // fill out the json to get in touch
               </h1>
@@ -62,6 +61,8 @@ export default function Title() {
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
                 <input
+                  type="text"
+                  name="name"
                   defaultValue="Daniel Johnson"
                   className="bg-gray-800 text-yellow-300 w-[151px] font-semilight text-md mt-1"
                 />
@@ -73,6 +74,8 @@ export default function Title() {
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
                 <input
+                  type="text"
+                  name="title"
                   defaultValue="Software Engineer"
                   className="bg-gray-800 text-yellow-300 w-[183px] font-semilight text-md my-1"
                 />
@@ -84,6 +87,8 @@ export default function Title() {
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
                 <input
+                  type="text"
+                  name="email"
                   defaultValue="myaddress@email.com"
                   className="bg-gray-800 text-yellow-300 w-[205px] font-semilight text-md"
                 />
@@ -95,6 +100,8 @@ export default function Title() {
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
                 <input
+                  type="text"
+                  name="message"
                   defaultValue="Hi, I love your work!"
                   className="bg-gray-800 text-yellow-300 w-[225px] font-semilight text-md my-1"
                 />
@@ -105,11 +112,11 @@ export default function Title() {
 
               <h1 className="font-source-code-pro text-green-500 text-xs sm:text-sm md:text-md lg:text-lg">
                 //{" "}
-                <button type="submit" className="underline">
+                <button type="submit" disabled={pending} className="underline">
                   Submit.
                 </button>
               </h1>
-            </div>
+            </form>
           </div>
 
           {/* <Terminal /> */}

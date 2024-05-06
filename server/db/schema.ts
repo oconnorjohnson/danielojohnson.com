@@ -36,3 +36,6 @@ export type SelectBlog = typeof blogs.$inferSelect;
 
 export type InsertProject = typeof projects.$inferInsert;
 export type SelectProject = typeof projects.$inferSelect;
+
+export type InsertMessage = typeof messages.$inferInsert;
+export type SelectMessage = typeof messages.$inferSelect;
