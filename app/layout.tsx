@@ -3,6 +3,7 @@ import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import { AuroraHero } from "@/components/root/stars";
 import SideNav from "@/components/root/side-nav";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Daniel O. Johnson",
@@ -23,6 +24,7 @@ export default function RootLayout({
           </div>
         </AuroraHero>
       </body>
+      <Toaster />
     </html>
   );
 }

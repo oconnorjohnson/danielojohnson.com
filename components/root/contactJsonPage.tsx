@@ -4,6 +4,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { createMessage } from "@/server/actions/post";
 import { useFormStatus } from "react-dom";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const jsonExample = {
   Name: "John Doe",
@@ -31,6 +32,7 @@ export default function Title() {
     event.preventDefault();
     const response = await createMessage(new FormData(event.target)); // Assuming createMessage can handle FormData directly
     if (response) {
+      toast.success("Message sent successfully!");
       // Clear form data
       setFormData({
         name: "",
