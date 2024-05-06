@@ -27,6 +27,7 @@ import {
   verticalListSortingStrategy,
   useSortable,
 } from "@dnd-kit/sortable";
+import { useCallback } from "react";
 import { CSS } from "@dnd-kit/utilities";
 
 export default function Editor() {
@@ -121,30 +122,33 @@ export default function Editor() {
     setActiveExplorerItem(tabName);
   };
 
-  const closeTab = (tabName: string) => {
-    const filteredTabs = tabs.filter((tab) => tab !== tabName);
-    setTabs(filteredTabs);
-    if (active === tabName) {
-      if (filteredTabs.length === 0) {
-        setActive("");
-        setActiveExplorerItem("");
-      } else {
-        const closedTabIndex = tabs.indexOf(tabName);
-        const newActiveTab =
-          closedTabIndex > 0
-            ? filteredTabs[closedTabIndex - 1]
-            : filteredTabs[0];
-        setActive(newActiveTab);
-        setActiveExplorerItem(newActiveTab);
+  const closeTab = useCallback(
+    (tabName: string) => {
+      const filteredTabs = tabs.filter((tab) => tab !== tabName);
+      setTabs(filteredTabs);
+      if (active === tabName) {
+        if (filteredTabs.length === 0) {
+          setActive("");
+          setActiveExplorerItem("");
+        } else {
+          const closedTabIndex = tabs.indexOf(tabName);
+          const newActiveTab =
+            closedTabIndex > 0
+              ? filteredTabs[closedTabIndex - 1]
+              : filteredTabs[0];
+          setActive(newActiveTab);
+          setActiveExplorerItem(newActiveTab);
+        }
       }
-    }
-  };
+    },
+    [tabs, active, setTabs, setActive, setActiveExplorerItem]
+  );
 
-  const closeAllTabs = () => {
+  const closeAllTabs = useCallback(() => {
     setTabs([]);
     setActive("");
     setActiveExplorerItem("");
-  };
+  }, [setTabs, setActive, setActiveExplorerItem]);
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.metaKey && event.shiftKey && event.key === "z") {

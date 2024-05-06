@@ -78,7 +78,7 @@ export default function Title() {
             </div>
             <form onSubmit={handleSubmit} method="post" className="pt-2">
               <h1 className="font-source-code-pro text-gray-500 text-xs sm:text-sm md:text-md lg:text-lg">
-                // fill out the json to get in touch
+                {"//"} fill out the json to get in touch
               </h1>
               <h1 className="font-source-code-pro text-xs sm:text-sm md:text-md lg:text-lg">
                 {"{"}
@@ -146,7 +146,7 @@ export default function Title() {
               </h1>
 
               <h1 className="font-source-code-pro text-green-500 text-xs sm:text-sm md:text-md lg:text-lg">
-                //{" "}
+                {"//"}{" "}
                 <button type="submit" disabled={pending} className="underline">
                   Submit.
                 </button>
