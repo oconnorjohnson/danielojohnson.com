@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { createMessage } from "@/server/actions/post";
 import { useFormStatus } from "react-dom";
+import { useState } from "react";
 
 const jsonExample = {
   Name: "John Doe",
@@ -14,6 +15,31 @@ const jsonExample = {
 
 export default function Title() {
   const { pending } = useFormStatus();
+  const [formData, setFormData] = useState({
+    name: "Daniel Johnson",
+    title: "Software Engineer",
+    email: "myaddress@email.com",
+    message: "Hi, I love your work!",
+  });
+
+  const handleChange = (event: any) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+    const response = await createMessage(new FormData(event.target)); // Assuming createMessage can handle FormData directly
+    if (response) {
+      // Clear form data
+      setFormData({
+        name: "",
+        title: "",
+        email: "",
+        message: "",
+      });
+    }
+  };
   return (
     <>
       <div className="flex flex-col">
@@ -48,7 +74,7 @@ export default function Title() {
               <div>10</div>
               <div>11</div>
             </div>
-            <form action={createMessage} method="post" className="pt-2">
+            <form onSubmit={handleSubmit} method="post" className="pt-2">
               <h1 className="font-source-code-pro text-gray-500 text-xs sm:text-sm md:text-md lg:text-lg">
                 // fill out the json to get in touch
               </h1>
@@ -63,6 +89,8 @@ export default function Title() {
                 <input
                   type="text"
                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   defaultValue="Daniel Johnson"
                   className="bg-gray-800 text-yellow-300 w-[151px] font-semilight text-md mt-1"
                 />
@@ -76,7 +104,8 @@ export default function Title() {
                 <input
                   type="text"
                   name="title"
-                  defaultValue="Software Engineer"
+                  value={formData.title}
+                  onChange={handleChange}
                   className="bg-gray-800 text-yellow-300 w-[183px] font-semilight text-md my-1"
                 />
                 {'",'}
@@ -89,6 +118,8 @@ export default function Title() {
                 <input
                   type="text"
                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   defaultValue="myaddress@email.com"
                   className="bg-gray-800 text-yellow-300 w-[205px] font-semilight text-md"
                 />
@@ -102,6 +133,8 @@ export default function Title() {
                 <input
                   type="text"
                   name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   defaultValue="Hi, I love your work!"
                   className="bg-gray-800 text-yellow-300 w-[225px] font-semilight text-md my-1"
                 />
