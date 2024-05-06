@@ -176,7 +176,8 @@ export default function Title() {
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {" ["}
                 <span style={{ color: "#ff6b81" }}>
-                  "Writing", "Filmmaking", "Woodworking"
+                  &quot;Writing&quot;, &quot;Filmmaking&quot;,
+                  &quot;Woodworking&quot;
                 </span>
                 {"],"}
                 <br />
@@ -186,7 +187,8 @@ export default function Title() {
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {" ["}
                 <span style={{ color: "#ff6b81" }}>
-                  "Tacos", "Eggs & Bacon", "Grapefruit"
+                  &quot;Tacos&quot;, &quot;Eggs & Bacon&quot;,
+                  &quot;Grapefruit&quot;
                 </span>
                 {"],"}
                 <br />
@@ -196,7 +198,8 @@ export default function Title() {
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {" ["}
                 <span style={{ color: "#ff6b81" }}>
-                  "Shameless", "Monk", "Mad Men", "The Office"
+                  &quot;Shameless&quot;, &quot;Monk&quot;, &quot;Mad Men&quot;,
+                  &quot;The Office&quot;
                 </span>
                 {"],"}
                 <br />
@@ -206,7 +209,8 @@ export default function Title() {
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {" ["}
                 <span style={{ color: "#ff6b81" }}>
-                  "Gipsy Kings", "Drakeo The Ruler", "Johnny Cash", "Future"
+                  &quot;Gipsy Kings&quot;, &quot;Drakeo The Ruler&quot;,
+                  &quot;Johnny Cash&quot;, &quot;Future&quot;
                 </span>
                 {"],"}
                 <br />
