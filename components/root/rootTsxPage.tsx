@@ -130,7 +130,7 @@ export default function Title() {
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {" ["}
                 <span style={{ color: "#ff6b81" }}>
-                  "React", "Next.js", "Express"
+                  &quot;React&quot;, &quot;Next.js&quot;, &quot;Express&quot;
                 </span>
                 {"],"}
                 <br />
@@ -140,7 +140,7 @@ export default function Title() {
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {" ["}
                 <span style={{ color: "#ff6b81" }}>
-                  "Jotai", "Zhustand", "Redux"
+                  &quot;Jotai&quot;, &quot;Zhustand&quot;, &quot;Redux&quot;
                 </span>
                 {"],"}
                 <br />
@@ -149,7 +149,9 @@ export default function Title() {
                 </span>
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {" ["}
-                <span style={{ color: "#ff6b81" }}>"SQL", "KV", "Vectors"</span>
+                <span style={{ color: "#ff6b81" }}>
+                  &quot;SQL&quot;, &quot;KV&quot;, &quot;Vectors&quot;
+                </span>
                 {"],"}
                 <br />
                 <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
@@ -157,7 +159,9 @@ export default function Title() {
                 </span>
                 <span style={{ color: "#d4d4d4" }}>:</span>{" "}
                 <span style={{ color: "#007acc" }}>CanLearnInADay</span>
-                <span style={{ color: "#d4d4d4" }}>(AllTools),</span>
+                <span style={{ color: "#d4d4d4" }}>
+                  {"("}AllTools{")"},
+                </span>
                 <br />
                 <span style={{ marginLeft: "" }}>{"};"}</span>
               </h1>
