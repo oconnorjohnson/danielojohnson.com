@@ -55,7 +55,7 @@ export default function Title() {
               <div>26</div>
               <div>27</div>
               <div>28</div>
-              <div>29</div>{" "}
+              <div>29</div> ``
             </div>
             <div className="pt-2">
               {/* PERSON */}
@@ -106,29 +106,7 @@ export default function Title() {
                   5-10 hour brainstorming sessions between myself and my writing
                   partner.
                 </span>
-                <br />
-                <span className="text-yellow-300">
-                  {"- ["}
-                  <a
-                    href="https://bootlegmilli.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-cyan-400"
-                  >
-                    Live Demo
-                  </a>
-                  {"]"}
-                  {"("}
-                  <a
-                    href="https://bootlegmilli.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className=" underline"
-                  >
-                    {"https://bootlegmilli.com"}
-                  </a>
-                  {")"}
-                </span>
+
                 <br />
                 <span className="text-yellow-300">
                   {"- ["}

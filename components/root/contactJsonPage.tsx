@@ -90,26 +90,15 @@ export default function Title() {
                 {'",'}
                 <br />
                 <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
-                  "phone"
+                  "message"
                 </span>
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
                 <input
-                  defaultValue="5555555555"
-                  className="bg-gray-800 text-yellow-300 w-[107px] font-semilight text-md my-1"
+                  defaultValue="Hi, I love your work!"
+                  className="bg-gray-800 text-yellow-300 w-[225px] font-semilight text-md my-1"
                 />
                 {'",'}
-                <br />
-                <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
-                  "preferredContactMethod"
-                </span>
-                <span style={{ color: "#d4d4d4" }}>:</span>
-                {' "'}
-                <input
-                  defaultValue="email"
-                  className="bg-gray-800 text-yellow-300 w-[52px] font-semilight text-md mb-1"
-                />
-                {'"'}
                 <br />
                 <span style={{ marginLeft: "" }}>{"}"}</span>{" "}
               </h1>
