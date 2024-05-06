@@ -1,7 +1,6 @@
 "use server";
-import { edgeDb, nodeDb } from "@/server/db/tursoClients";
+import { nodeDb } from "@/server/db/tursoClients";
 import { messages } from "@/server/db/schema";
-import type { InsertMessage } from "@/server/db/schema";
 
 export async function createMessage(formData: FormData): Promise<boolean> {
   const rawFormData = {
