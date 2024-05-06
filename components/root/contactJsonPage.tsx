@@ -84,7 +84,7 @@ export default function Title() {
                 {"{"}
                 <br />
                 <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
-                  "name"
+                  &quot;name&quot;
                 </span>
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
@@ -99,7 +99,7 @@ export default function Title() {
                 {'",'}
                 <br />
                 <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
-                  "title"
+                  &quot;title&quot;
                 </span>
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
@@ -113,7 +113,7 @@ export default function Title() {
                 {'",'}
                 <br />
                 <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
-                  "email"
+                  &quot;email&quot;
                 </span>
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
@@ -128,7 +128,7 @@ export default function Title() {
                 {'",'}
                 <br />
                 <span style={{ marginLeft: "2.4em", color: "#9cdcfe" }}>
-                  "message"
+                  &quot;message&quot;
                 </span>
                 <span style={{ color: "#d4d4d4" }}>:</span>
                 {' "'}
