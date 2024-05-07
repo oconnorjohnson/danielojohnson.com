@@ -21,9 +21,12 @@ export default function RootPage() {
             Simple Portfolio
           </Link>
           {/* Code Editor Card */}
+          <div className="block flex flex-grow w-full bg-gray-400 text-black px-2 py-1 rounded-md my-2 h-[250px] lg:hidden">
+            Code Editor Portfolio
+          </div>
           <Link
             href="/ide"
-            className="flex flex-grow w-full bg-white text-black px-2 py-1 rounded-md my-2 h-[250px]"
+            className="hidden lg:flex flex-grow w-full bg-white text-black px-2 py-1 rounded-md my-2 h-[250px]"
           >
             Code Editor Portfolio
           </Link>
