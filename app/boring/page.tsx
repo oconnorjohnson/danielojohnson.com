@@ -1,34 +1,48 @@
 import Link from "next/link";
+import { MdArrowLeft } from "react-icons/md";
 
 export default function BoringPage() {
   return (
     <>
-      <div className="flex flex-col w-screen h-screen">
-        <div className="flex flex-col items-center justify-center">
-          <h1
-            id="home"
-            className="font-black text-3xl lg:font-thin lg:text-5xl pt-8 pb-12"
-          >
-            Daniel O&apos;Connor Johnson
-          </h1>
-          <div className="flex flex-col justify-center items-center pt-12 pb-24">
-            <h1
-              id="index"
-              className="flex flex-col justify-center font-bold text-2xl lg:text-4xl"
-            >
-              Index
-            </h1>
-            <div className="py-2" />
-            <a className="hover:underline" href="#projects">
-              Projects
-            </a>
-            <a className="hover:underline" href="#skills">
-              Skills & Interests
-            </a>
-            <a className="hover:underline" href="#contact">
-              Contact
-            </a>
+      <div id="home" className="flex flex-col w-screen h-screen">
+        <div className="flex flex-col items-center justify-center w-full">
+          <div className="flex flex-col xl:flex-row justify-between items-center align-center w-1/2 pt-20 pb-24">
+            <div className="flex flex-col items-center justify-center">
+              <h1 className="font-thin text-xl lg:text-4xl pt-8 ">
+                Daniel O&apos;Connor Johnson
+              </h1>
+              <Link
+                className="flex flex-row justify-around align-center items-center text-center py-2 px-4 bg-gray-400  rounded-lg text-sm lg:text-lg text-gray-950 mt-6"
+                href="/"
+              >
+                <MdArrowLeft className="h-6 w-6 pr-2" />
+                Choose a more interesting experience
+              </Link>
+            </div>
+            <div className="flex flex-col justify-center items-center pt-12">
+              <h1
+                id="index"
+                className="flex flex-col justify-center font-bold text-lg lg:text-xl"
+              >
+                Navigation
+              </h1>
+              <div className="py-2" />
+              <a className="hover:underline" href="#projects">
+                Projects
+              </a>
+              <a className="hover:underline" href="#skills">
+                Skills & Interests
+              </a>
+              <a className="hover:underline" href="#blogs">
+                Blogs
+              </a>
+              <a className="hover:underline" href="#contact">
+                Contact
+              </a>
+            </div>
           </div>
+          <div className="py-6 w-full border-b border-gray-400" />
+          <div className="py-12 w-full " />
           <h1
             id="projects"
             className="flex flex-col justify-center font-bold text-2xl lg:text-4xl"
@@ -36,8 +50,7 @@ export default function BoringPage() {
             Projects
           </h1>
           <div className="py-2" />
-          <div className="flex flex-col justify-center w-3/4 lg:w-1/2">
-            <div className="flex flex-row justify-between w-full border-l-4 border-gray-400 py-4"></div>
+          <div className="flex flex-col justify-center w-3/4 lg:w-1/2 pt-12">
             <div className="flex flex-row justify-between w-full border-l-4 border-gray-400">
               <div className="w-1/4 lg:w-2/3  border-t border-gray-400" />
               <div className="flex flex-col border border-gray-400 rounded-bl-lg rounded-br-lg rounded-tr-lg px-6 py-4 mb-8">
@@ -166,10 +179,11 @@ export default function BoringPage() {
               </div>
             </div>
           </div>
-          <div className="py-12" />
+          <div className="py-6 w-full border-b border-gray-400" />
+          <div className="py-12 w-full " />
           <h1
             id="skills"
-            className="flex flex-col justify-center font-bold text-2xl lg:text-4xl"
+            className="flex flex-col justify-center font-bold text-2xl lg:text-4xl h-screen"
           >
             Skills & Interests
           </h1>
@@ -177,14 +191,30 @@ export default function BoringPage() {
           <div className="flex flex-col justify-center w-3/4 lg:w-1/2">
             stuffr
           </div>
-          <div className="py-12" />
+          <div className="py-6 w-full border-b border-gray-400" />
+          <div className="py-12 w-full " />
+          <h1
+            id="blogs"
+            className="flex flex-col justify-center font-bold text-2xl lg:text-4xl h-screen"
+          >
+            Blogs
+          </h1>
+          <div className="py-2" />
+          <div className="flex flex-col justify-center w-3/4 lg:w-1/2">
+            stuffr
+          </div>
+          <div className="py-6 w-full border-b border-gray-400" />
+          <div className="py-12 w-full " />
           <h1
             id="contact"
-            className="flex flex-col justify-center font-bold text-2xl lg:text-4xl"
+            className="flex flex-col justify-center font-bold text-2xl lg:text-4xl h-screen"
           >
             Contact Me
           </h1>
-          <div className="py-2" />
+          <div className="py-6 w-full border-b border-gray-400" />
+          <div className="py-12 w-full " />
+          <a href="#home">Back to Top</a>
+          <div className="py-12" />
         </div>
       </div>
     </>
