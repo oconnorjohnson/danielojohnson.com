@@ -1,9 +1,6 @@
 import Link from "next/link";
-import {
-  HoverCard,
-  HoverCardTrigger,
-  HoverCardContent,
-} from "@/components/ui/hover-card";
+
+export const runtime = "edge";
 
 export default function RootPage() {
   return (

@@ -23,6 +23,7 @@ import {
   FcRight,
 } from "react-icons/fc";
 import { MdArrowDropDown, MdArrowRight } from "react-icons/md";
+import Link from "next/link";
 
 export default function Component({ children }: { children: React.ReactNode }) {
   const [activeItem, setActiveItem] = useAtom(activeExplorerItem);
@@ -52,6 +53,17 @@ export default function Component({ children }: { children: React.ReactNode }) {
     <div className="flex flex-row h-full overflow-auto">
       <div className="w-80 bg-gray-900 text-gray-100">
         <div className="p-4">
+          <div className="flex flex-row items-start align-middle pb-4">
+            <Link href="/">
+              <div className="p-1.5 rounded-full bg-red-500" />
+            </Link>
+            <Link href="/">
+              <div className="p-1.5 mx-2 rounded-full bg-yellow-500" />
+            </Link>
+            <Link href="/">
+              <div className="p-1.5 rounded-full bg-green-500" />
+            </Link>
+          </div>
           <div className="flex items-center gap-2 mb-6">
             <FcFolder className="h-6 w-6" />
             <span className="font-semibold">Explorer</span>

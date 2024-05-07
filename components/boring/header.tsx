@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { MdArrowLeft } from "react-icons/md";
 
 export default function Footer() {
   return (
