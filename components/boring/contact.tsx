@@ -1,3 +1,11 @@
+"use client";
+import { useFormStatus } from "react-dom";
+import { useState } from "react";
+import { createMessage } from "@/server/actions/post";
+import { toast } from "sonner";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+
 export default function Contact() {
   return (
     <>

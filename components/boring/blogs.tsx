@@ -11,7 +11,7 @@ export default function Blogs() {
         A brief look at a long list of my skills, interests & hobbies.
       </h3>
       <div className="flex flex-col justify-center w-full">
-        <h1 className=" text-xs sm:text-sm md:text-md lg:text-lg ">
+        <h1 className="lg:text-lg ">
           <span className="font-bold" style={{ color: "#9cdcfe" }}>
             My Blogs
           </span>

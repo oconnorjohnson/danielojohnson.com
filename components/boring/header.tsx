@@ -14,7 +14,7 @@ export default function Footer() {
           Choose a more interesting experience
         </Link>
       </div>
-      <div className="flex flex-col items-center xl:items-end pt-6">
+      <div className="flex flex-col items-center xl:items-end pt-6 text-lg">
         <h1 id="index" className="flex flex-col justify-center font-bold ">
           Navigation
         </h1>
