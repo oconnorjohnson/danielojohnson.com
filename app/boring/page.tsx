@@ -10,7 +10,7 @@ export default function BoringPage() {
         style={{ scrollBehavior: "smooth" }}
       >
         <div className="flex flex-col items-center justify-center w-full ">
-          <div className="flex flex-col xl:flex-row justify-between items-center align-center w-1/2 pt-20 pb-24">
+          <div className="flex flex-col xl:flex-row justify-between items-center align-center w-1/2 pt-20 pb-12 ">
             <div className="flex flex-col items-center justify-center">
               <h1 className="font-thin text-xl lg:text-4xl pt-8 ">
                 Daniel O&apos;Connor Johnson
@@ -55,6 +55,10 @@ export default function BoringPage() {
             >
               Projects
             </h1>
+            <h3 className="text-lg pb-2 pt-1">
+              A more or less reverse-chronological list of my projects, with
+              links to their GitHub repos {"/"} live sites.
+            </h3>
             <div className="py-2" />
             <div className="flex flex-row justify-between w-full border-l-4 border-gray-400">
               <div className="w-1/4 lg:w-2/3  border-t border-gray-400" />
@@ -201,9 +205,13 @@ export default function BoringPage() {
             >
               Skills & Interests
             </h1>
-            <div className="py-2" />
-            <div className="h-screen flex flex-col justify-center w-3/4 lg:w-1/2">
-              stuffr
+            <h3 className="text-lg pb-2 pt-1">
+              A brief look at a long list of my skills, interests & hobbies.
+            </h3>
+            <div className="flex flex-col justify-center w-full">
+              <div className="flex flex-col justify-start">
+                list will go here
+              </div>
             </div>
             <div className="py-6 w-full border-b border-gray-400" />
           </div>
@@ -215,9 +223,11 @@ export default function BoringPage() {
             >
               Blogs
             </h1>
-            <div className="py-2" />
-            <div className="h-screen flex flex-col justify-center w-3/4 lg:w-1/2">
-              stuffr
+            <h3 className="text-lg pb-2 pt-1">
+              A brief look at a long list of my skills, interests & hobbies.
+            </h3>
+            <div className="flex flex-col justify-center w-full">
+              <div className="flex flex-col justify-start">blogs go here</div>
             </div>
             <div className="py-6 w-full border-b border-gray-400" />
           </div>
@@ -229,9 +239,14 @@ export default function BoringPage() {
             >
               Contact Me
             </h1>
+            <h3 className="text-lg pb-2 pt-1">
+              If you want to hire me, discuss coding, or just say hi {":)"}
+            </h3>{" "}
             <div className="py-2" />
-            <div className="h-screen flex flex-col justify-center w-3/4 lg:w-1/2">
-              stuffr
+            <div className="flex flex-col justify-center w-full">
+              <div className="flex flex-col justify-start">
+                contact form will go here
+              </div>
             </div>
             <div className="py-6 mb-12 w-full border-b border-gray-400" />
           </div>
