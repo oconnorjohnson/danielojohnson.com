@@ -17,8 +17,10 @@ export default function RootPage() {
           So you&apos;ve been tasked with learning about me...
         </h3>
 
-        <h1 className="font-black text-3xl lg:font-bold lg:text-6xl pt-4 border-b border-gray-400 pb-6">
-          Choose Your Experience {":)"}
+        <h1 className="font-black text-3xl lg:font-bold lg:text-6xl pt-4 pb-6">
+          <span className="font-bold border-b border-gray-400 ">
+            Choose Your Experience
+          </span>
         </h1>
         <ol className="list-decimal text-xl px-6 pt-4">
           <li>
@@ -28,17 +30,9 @@ export default function RootPage() {
           </li>
           <div className="hidden lg:block">
             <li>
-              <HoverCard>
-                <HoverCardTrigger>
-                  <Link className="hover:text-yellow-400 underline" href="/ide">
-                    Code Editor
-                  </Link>
-                </HoverCardTrigger>
-                <HoverCardContent>
-                  My portfolio presented in a faux IDE, complete with hotkeys
-                  and draggable tabs.
-                </HoverCardContent>
-              </HoverCard>
+              <Link className="hover:text-yellow-400 underline" href="/ide">
+                Code Editor
+              </Link>
             </li>
           </div>
           <div className="lg:hidden">
