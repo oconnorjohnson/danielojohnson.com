@@ -15,7 +15,6 @@ export default function BoringPage() {
       >
         <div className="flex flex-col items-center justify-center w-full ">
           <Header />
-
           <div className="flex flex-col justify-center w-3/4 lg:w-1/2">
             <Projects />
           </div>
@@ -31,7 +30,6 @@ export default function BoringPage() {
           <div className="flex flex-col justify-center w-3/4 lg:w-1/2">
             <Contact />
           </div>
-
           <div className="flex flex-col justify-center w-3/4 lg:w-1/2">
             <Footer />
           </div>
