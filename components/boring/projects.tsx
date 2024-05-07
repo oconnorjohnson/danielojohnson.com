@@ -16,9 +16,10 @@ export default function Projects() {
         their GitHub repos {"/"} live sites.
       </h3>
       <div className="py-2" />
-      <div className="flex flex-row justify-between w-full border-l-4 border-gray-400">
+      <div className="flex flex-row justify-between w-full border-l-8 border-gray-400">
         <div className="w-1/4 lg:w-2/3  border-t border-gray-400" />
-        <div className="flex flex-col border border-gray-400 rounded-bl-lg rounded-br-lg rounded-tr-lg px-6 py-4 mb-8">
+
+        <div className="flex flex-col border border-gray-400 rounded-bl-lg rounded-br-lg rounded-tr-lg px-4 py-3 mb-10 bg-gray-800">
           <h2 className="font-semibold text-xl pb-2 text-blue-500">
             babylon.legal {"(WIP)"}
           </h2>
@@ -39,9 +40,9 @@ export default function Projects() {
           </Link>
         </div>
       </div>
-      <div className="flex flex-row justify-between w-full border-l-4 border-gray-400">
+      <div className="flex flex-row justify-between w-full border-l-8 border-gray-400">
         <div className="w-1/4 lg:w-2/3 border-t border-gray-400" />
-        <div className="flex flex-col border border-gray-400 rounded-bl-lg rounded-br-lg rounded-tr-lg px-6 py-4 mb-8">
+        <div className="flex flex-col border border-gray-400 rounded-bl-lg rounded-br-lg rounded-tr-lg px-4 py-3 mb-10 bg-gray-800">
           <h2 className="font-semibold text-xl pb-2 text-blue-500">
             Defeat-The-Primeagen {"(WIP)"}
           </h2>
@@ -60,9 +61,9 @@ export default function Projects() {
           </Link>
         </div>
       </div>
-      <div className="flex flex-row justify-between w-full border-l-4 border-gray-400">
+      <div className="flex flex-row justify-between w-full border-l-8 border-gray-400">
         <div className="w-1/4 lg:w-2/3  border-t border-gray-400" />
-        <div className="flex flex-col border border-gray-400 rounded-bl-lg rounded-br-lg rounded-tr-lg px-6 py-4 mb-8">
+        <div className="flex flex-col border border-gray-400 rounded-bl-lg rounded-br-lg rounded-tr-lg px-4 py-3 mb-10 bg-gray-800">
           <h2 className="font-semibold text-xl pb-2 text-blue-500">
             danielojohnson.com
           </h2>
@@ -81,9 +82,9 @@ export default function Projects() {
           </Link>
         </div>
       </div>
-      <div className="flex flex-row justify-between w-full border-l-4 border-gray-400">
+      <div className="flex flex-row justify-between w-full border-l-8 border-gray-400">
         <div className="w-1/4 lg:w-2/3 border-t border-gray-400" />
-        <div className="flex flex-col border border-gray-400 rounded-bl-lg rounded-br-lg rounded-tr-lg px-6 py-4 mb-8">
+        <div className="flex flex-col border border-gray-400 rounded-bl-lg rounded-br-lg rounded-tr-lg px-4 py-3 mb-10 bg-gray-800">
           <h2 className="font-semibold text-xl pb-2 text-blue-500">
             Milli-Agent {"(WIP)"}
           </h2>
@@ -102,9 +103,9 @@ export default function Projects() {
           </Link>
         </div>
       </div>
-      <div className="flex flex-row justify-between w-full border-l-4 border-gray-400">
+      <div className="flex flex-row justify-between w-full border-l-8 border-gray-400">
         <div className="w-1/4 lg:w-2/3  border-t border-gray-400" />
-        <div className="flex flex-col border border-gray-400 rounded-bl-lg rounded-br-lg rounded-tr-lg px-6 py-4 mb-8">
+        <div className="flex flex-col border border-gray-400 rounded-bl-lg rounded-br-lg rounded-tr-lg px-4 py-3 mb-10 bg-gray-800">
           <h2 className="font-semibold text-xl pb-2 text-blue-500">
             yolopublicdefendercares.org
           </h2>
@@ -125,9 +126,9 @@ export default function Projects() {
           </Link>
         </div>
       </div>
-      <div className="flex flex-row justify-between w-full border-l-4 border-gray-400">
+      <div className="flex flex-row justify-between w-full border-l-8 border-gray-400">
         <div className="w-1/4 lg:w-2/3 border-t border-gray-400" />
-        <div className="flex flex-col border border-gray-400 rounded-bl-lg rounded-br-lg rounded-tr-lg px-6 py-4 mb-8">
+        <div className="flex flex-col border border-gray-400 rounded-bl-lg rounded-br-lg rounded-tr-lg px-4 py-3 mb-10 bg-gray-800">
           <h2 className="font-semibold text-xl pb-2 text-blue-500">PocketPR</h2>
           <h3 className="font-light text-lg pb-2">
             Automated PR for Content Creators

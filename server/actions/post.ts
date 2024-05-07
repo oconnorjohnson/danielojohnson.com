@@ -13,7 +13,6 @@ export async function createMessage(formData: FormData): Promise<boolean> {
     await nodeDb.insert(messages).values(rawFormData).execute();
     return true;
   } catch (error) {
-    console.log("Failed to create message:", error);
     return false;
   }
 }

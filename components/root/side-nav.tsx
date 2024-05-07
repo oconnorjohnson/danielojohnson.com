@@ -37,7 +37,6 @@ export default function Component({ children }: { children: React.ReactNode }) {
     if (!tabs.includes(itemId)) {
       setTabs((prevTabs) => [...prevTabs, itemId]);
     }
-    console.log("active item:", itemId);
     setActive(itemId);
   };
 

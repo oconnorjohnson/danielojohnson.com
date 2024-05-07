@@ -14,9 +14,7 @@ export default function BoringPage() {
         style={{ scrollBehavior: "smooth" }}
       >
         <div className="flex flex-col items-center justify-center w-full ">
-          <div className="flex flex-col xl:flex-row justify-between items-center align-center w-1/2 pt-20 pb-12 ">
-            <Header />
-          </div>
+          <Header />
 
           <div className="flex flex-col justify-center w-3/4 lg:w-1/2">
             <Projects />
