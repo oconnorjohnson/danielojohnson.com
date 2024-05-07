@@ -9,11 +9,11 @@ export default function RootPage() {
           Daniel O&apos;Connor Johnson | Builder
         </h2>
 
-        <h3 className="font-light text-lg lg:text-xl">
+        <h3 className="font-light text-xl lg:text-2xl ">
           So you&apos;ve been tasked with learning about me...
         </h3>
-        <div className="py-2 border-b border-gray-400 sm:w-3/4 md:w-1/2 lg:w-1/3" />
-        <h1 className="font-black text-3xl lg:font-bold lg:text-6xl pt-4">
+
+        <h1 className="font-black text-3xl lg:font-bold lg:text-6xl pt-4 border-b border-gray-400 pb-6">
           Choose Your Experience {":)"}
         </h1>
         <ol className="list-decimal text-xl px-6 pt-4">
@@ -22,11 +22,13 @@ export default function RootPage() {
               Plain Text
             </Link>
           </li>
-          <li>
-            <Link className="hover:text-yellow-400 underline" href="/ide">
-              Code Editor
-            </Link>
-          </li>
+          <div className="hidden lg:block">
+            <li>
+              <Link className="hover:text-yellow-400 underline" href="/ide">
+                Code Editor
+              </Link>
+            </li>
+          </div>
           <li>
             <Link className="hover:text-yellow-400 underline" href="/future">
               Futuristic
