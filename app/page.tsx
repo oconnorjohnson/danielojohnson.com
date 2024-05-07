@@ -1,5 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
+import {
+  HoverCard,
+  HoverCardTrigger,
+  HoverCardContent,
+} from "@/components/ui/hover-card";
 
 export default function RootPage() {
   return (
@@ -24,9 +28,17 @@ export default function RootPage() {
           </li>
           <div className="hidden lg:block">
             <li>
-              <Link className="hover:text-yellow-400 underline" href="/ide">
-                Code Editor
-              </Link>
+              <HoverCard>
+                <HoverCardTrigger>
+                  <Link className="hover:text-yellow-400 underline" href="/ide">
+                    Code Editor
+                  </Link>
+                </HoverCardTrigger>
+                <HoverCardContent>
+                  My portfolio presented in a faux IDE, complete with hotkeys
+                  and draggable tabs.
+                </HoverCardContent>
+              </HoverCard>
             </li>
           </div>
           <div className="lg:hidden">
