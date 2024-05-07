@@ -1,4 +1,3 @@
-import "dotenv/config";
 import { drizzle } from "drizzle-orm/libsql";
 import { createClient as createNodeClient } from "@libsql/client";
 import { createClient as createEdgeClient } from "@libsql/client/web";
