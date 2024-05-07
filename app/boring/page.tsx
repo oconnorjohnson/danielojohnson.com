@@ -11,7 +11,24 @@ export default function BoringPage() {
           >
             Daniel O&apos;Connor Johnson
           </h1>
-
+          <div className="flex flex-col justify-center items-center pt-12 pb-24">
+            <h1
+              id="index"
+              className="flex flex-col justify-center font-bold text-2xl lg:text-4xl"
+            >
+              Index
+            </h1>
+            <div className="py-2" />
+            <a className="hover:underline" href="#projects">
+              Projects
+            </a>
+            <a className="hover:underline" href="#skills">
+              Skills & Interests
+            </a>
+            <a className="hover:underline" href="#contact">
+              Contact
+            </a>
+          </div>
           <h1
             id="projects"
             className="flex flex-col justify-center font-bold text-2xl lg:text-4xl"
@@ -150,7 +167,10 @@ export default function BoringPage() {
             </div>
           </div>
           <div className="py-12" />
-          <h1 className="flex flex-col justify-center font-bold text-2xl lg:text-4xl">
+          <h1
+            id="skills"
+            className="flex flex-col justify-center font-bold text-2xl lg:text-4xl"
+          >
             Skills & Interests
           </h1>
           <div className="py-2" />
