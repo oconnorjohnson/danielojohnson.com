@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "@/app/globals.css";
+
 import { GeistSans } from "geist/font/sans";
 import SideNav from "@/components/root/side-nav";
 import { Toaster } from "@/components/ui/sonner";
@@ -16,8 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className="bg-black">{children}</body>
-      <Toaster />
+      <body className="bg-black">
+        <div className="h-screen w-screen">
+          <SideNav>{children}</SideNav>
+        </div>
+      </body>
     </html>
   );
 }

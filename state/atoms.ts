@@ -8,3 +8,4 @@ export const openTabs = atom<string[]>(["index.js"]);
 export const activeTab = atom<string>("index.js");
 export const isCommandInputActive = atom<boolean>(false);
 export const commandInputValue = atom<string>("");
+export const isMenuOpen = atom<boolean>(false);

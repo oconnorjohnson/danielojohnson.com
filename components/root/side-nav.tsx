@@ -7,13 +7,21 @@ import {
   isPagesTabOpen,
   openTabs,
   activeTab,
+  isMenuOpen,
 } from "@/state/atoms";
 import {
   CollapsibleTrigger,
   CollapsibleContent,
   Collapsible,
 } from "@/components/ui/collapsible";
-import { FcFolder, FcOpenedFolder, FcFile, FcInfo } from "react-icons/fc";
+import {
+  FcFolder,
+  FcOpenedFolder,
+  FcFile,
+  FcInfo,
+  FcLeft,
+  FcRight,
+} from "react-icons/fc";
 import { MdArrowDropDown, MdArrowRight } from "react-icons/md";
 
 export default function Component({ children }: { children: React.ReactNode }) {
@@ -22,6 +30,7 @@ export default function Component({ children }: { children: React.ReactNode }) {
   const [isPagesOpen, setIsPagesOpen] = useAtom(isPagesTabOpen);
   const [tabs, setTabs] = useAtom(openTabs);
   const [, setActive] = useAtom(activeTab);
+  const [isSideNavOpen, setIsSideNavOpen] = useAtom(isMenuOpen);
 
   const handleItemClick = (itemId: string) => {
     setActiveItem(itemId);
@@ -45,9 +54,10 @@ export default function Component({ children }: { children: React.ReactNode }) {
       <div className="w-80 bg-gray-900 text-gray-100">
         <div className="p-4">
           <div className="flex items-center gap-2 mb-6">
-            <FcFolder className="h-8 w-8" />
+            <FcFolder className="h-6 w-6" />
             <span className="font-semibold">Explorer</span>
           </div>
+
           <div className="space-y-1">
             <Collapsible open={isOpen}>
               <CollapsibleTrigger
