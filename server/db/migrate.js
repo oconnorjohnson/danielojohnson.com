@@ -1,5 +1,3 @@
-import dotenv from "dotenv";
-dotenv.config();
 import { resolve, dirname } from "path";
 import { nodeDb } from "./tursoClients.js";
 import { fileURLToPath } from "url";
