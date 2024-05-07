@@ -12,11 +12,9 @@ export default function Blogs() {
       </h3>
       <div className="flex flex-col justify-center w-full">
         <h1 className="lg:text-lg ">
-          <span className="font-bold" style={{ color: "#9cdcfe" }}>
-            My Blogs
-          </span>
+          <span className="font-bold text-blue-500">My Blogs</span>
           <div className="pt-7" />
-          <span className="font-bold text-yellow-300">
+          <span className="font-bold text-blue-400">
             Post 1: Don&apos;t Write Blogs {"(Write Code)"}
           </span>
           <br />
