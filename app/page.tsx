@@ -29,6 +29,12 @@ export default function RootPage() {
               </Link>
             </li>
           </div>
+          <div className="lg:hidden">
+            <li>
+              <span className="underline pr-2">Code Editor </span> {"("}Not
+              available on mobile{")"}
+            </li>
+          </div>
           <li>
             <Link className="hover:text-yellow-400 underline" href="/future">
               Futuristic
