@@ -4,6 +4,9 @@ export default function RootPage() {
   return (
     <>
       <div className="flex flex-col py-10 px-6 w-screen h-screen lg:justify-center">
+        <h2 className="font-bold pb-1">
+          Daniel O&apos;Connor Johnson | Builder
+        </h2>
         <h3 className="font-light text-lg lg:text-xl">
           So you&apos;ve been tasked with learning about me...
         </h3>
