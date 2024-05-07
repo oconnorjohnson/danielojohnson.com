@@ -1,5 +1,5 @@
 import Editor from "@/components/root/editor";
-
+export const runtime = "edge";
 export default function CodeEditorPage() {
   return (
     <>
