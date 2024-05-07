@@ -1,11 +1,12 @@
 "use client";
 import { useAtom } from "jotai";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import {
   activeExplorerItem,
   openTabs,
   activeTab,
   commandInputValue,
+  suggestionsAtom,
   isCommandInputActive,
 } from "@/state/atoms";
 import RootTsxPage from "@/components/root/rootTsxPage";
@@ -31,6 +32,7 @@ import { useCallback } from "react";
 import { CSS } from "@dnd-kit/utilities";
 
 export default function Editor() {
+  const [suggestions, setSuggestions] = useAtom(suggestionsAtom);
   const [tabs, setTabs] = useAtom(openTabs);
   const [active, setActive] = useAtom(activeTab);
   const [, setActiveExplorerItem] = useAtom(activeExplorerItem);
@@ -39,6 +41,12 @@ export default function Editor() {
   const delayConstraint = {
     delay: 250,
     tolerance: 5,
+  };
+  const pageMap: Record<string, string> = {
+    "root.tsx": "index.js",
+    "projects.md": "header",
+    "blogs.md": "footer",
+    "contact.json": "contact",
   };
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -54,7 +62,12 @@ export default function Editor() {
   }, [setIsActive]);
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
+    const filteredSuggestions = Object.keys(pageMap).filter((page) =>
+      page.toLowerCase().includes(event.target.value.toLowerCase())
+    );
+    setSuggestions(filteredSuggestions);
   };
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -68,12 +81,6 @@ export default function Editor() {
     };
   }, [setIsActive, setInputValue]);
   const openPage = (pageName: string) => {
-    const pageMap: Record<string, string> = {
-      "root.tsx": "index.js",
-      "projects.md": "header",
-      "blogs.md": "footer",
-      "contact.json": "contact",
-    };
     const pageId = pageMap[pageName];
     if (pageId) {
       if (!tabs.includes(pageId)) {
@@ -82,11 +89,12 @@ export default function Editor() {
       setActive(pageId);
       setIsActive(false);
       setInputValue("");
+      setSuggestions([]);
     }
   };
   const handleInputConfirm = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter") {
-      openPage(inputValue);
+    if (event.key === "Enter" && suggestions.length > 0) {
+      openPage(suggestions[0]); // Opens the first suggestion
     }
   };
   const sensors = useSensors(
@@ -225,13 +233,26 @@ export default function Editor() {
         <>
           <input
             type="text"
-            className=" items-center justify-center p-1 bg-gray-900 text-gray-100 w-full"
+            className="items-center justify-center p-1 bg-gray-900 text-gray-100 w-full"
             value={inputValue}
             onChange={handleInputChange}
             onKeyDown={handleInputConfirm}
             placeholder="Type a page name..."
             autoFocus
           />
+          {suggestions.length > 0 && (
+            <ul className="list-none m-0 p-0 bg-gray-800 text-white">
+              {suggestions.map((suggestion, index) => (
+                <li
+                  key={index}
+                  className="p-2 hover:bg-gray-700 cursor-pointer"
+                  onClick={() => openPage(suggestion)}
+                >
+                  {suggestion}
+                </li>
+              ))}
+            </ul>
+          )}
         </>
       )}
       <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
