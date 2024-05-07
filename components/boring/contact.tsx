@@ -20,9 +20,19 @@ export default function Contact() {
       </h3>{" "}
       <div className="py-2" />
       <div className="flex flex-col justify-center w-full">
-        <div className="flex flex-col justify-start">
-          contact form will go here
-        </div>
+        <form action={createMessage} method="post">
+          <div className="flex flex-col justify-start">
+            <Input name="name" placeholder="Your Name" required />
+            <Input name="title" placeholder="Your Title" required />
+            <Input name="email" placeholder="Your Email" required />
+            <Textarea name="message" placeholder="Your Message" required />
+          </div>
+          <div className="flex flex-col justify-start">
+            <button type="submit" className="underline">
+              Submit.
+            </button>
+          </div>
+        </form>
       </div>
       <div className="py-6 mb-12 w-full border-b border-gray-400" />
     </>
