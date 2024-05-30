@@ -38,7 +38,7 @@ export default function RootPage() {
               available on mobile{")"}
             </li>
           </div>
-          <li>
+          {/* <li>
             <Link className="hover:text-yellow-400 underline" href="/future">
               Futuristic
             </Link>
@@ -47,7 +47,7 @@ export default function RootPage() {
             <Link className="hover:text-yellow-400 underline" href="/2000s">
               2000&apos;s
             </Link>
-          </li>
+          </li> */}
         </ol>
       </div>
     </>

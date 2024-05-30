@@ -1,5 +1,6 @@
 import "@/app/globals.css";
 import { GeistSans } from "geist/font/sans";
+
 export default function FutureLayout({
   children,
 }: {
@@ -7,9 +8,9 @@ export default function FutureLayout({
 }) {
   return (
     <>
-      <html lang="en" className={GeistSans.className}>
-        <body className="bg-black">{children}</body>
-      </html>
+      <body>
+        <div className="content">{children}</div>
+      </body>
     </>
   );
 }

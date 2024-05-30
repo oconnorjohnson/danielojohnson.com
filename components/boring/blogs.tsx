@@ -8,11 +8,10 @@ export default function Blogs() {
         Blogs
       </h1>
       <h3 className="text-lg pb-2 pt-1">
-        A brief look at a long list of my skills, interests & hobbies.
+        Some thoughts - Warning: they might not be useful.
       </h3>
       <div className="flex flex-col justify-center w-full">
         <h1 className="lg:text-lg ">
-          <span className="font-bold text-blue-500">My Blogs</span>
           <div className="pt-7" />
           <span className="font-bold text-blue-400">
             Post 1: Don&apos;t Write Blogs {"(Write Code)"}
